@@ -496,9 +496,7 @@ To demonstrate that the VM Agent is installed, we will now execute the 'Run comm
 
     ![Screenshot showing the Run command feature.](images/Exercise3/run-command.png "Run command")
 
-9. As a final step, you will now clean up the resources that were created to support the migration and are no longer needed. These include the Azure Migrate project, the Recovery Service Vault (Azure Site Recovery resource) used by  Azure Migrate: Server Migration, and the Database Migration Service instance. Also included are various secondary resources such as the Log Analytics workspace used by the Dependency Visualization, the storage account used by Azure Migrate: Server Migration, and a Key Vault instance.
 
-    Because all of these temporary resources have been deployed to a separate **AzureMigrateRG** resource group, deleting them is as simple as deleting the resource group. Simply navigate to the resource group blade in the Azure portal, select **Delete resource group** and complete the confirmation prompts.
 
 #### Task summary <!-- omit in toc -->
 
