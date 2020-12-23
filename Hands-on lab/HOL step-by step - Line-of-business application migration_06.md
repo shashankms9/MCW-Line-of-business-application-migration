@@ -29,9 +29,7 @@ In this task, you will create the Azure Migrate project and select the assessmen
  
      ![Screenshot of the Create project overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/createproject.png?raw=true "Create project Overview blade")
 
-5. Select your **subscription** and select existing resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a **geography** close to you to store the migration assessment data. Then select **Create**.  
-
-      ![Screenshot of the Azure Migrate 'Create project' blade, showing the Azure Migrate project name, resource group and geography.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/stage/Hands-on%20lab/images/Exercise1/create-project.png?raw=true "Azure Migrate - Create project")
+5. Select your **subscription** and select existing resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a **geography** close to you to store the migration assessment data. Then select **Create**.
 
     >**Note**: If you are running this lab in a shared subscription you will need to use a migrate project name that is unique in the subscription. Append characters to the end of migrate project name to make your project name unique. For example: **SmartHotelMigration1234**.
 
@@ -172,7 +170,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
      > **Note**: You can find the Azure Credentials from the **Environment details page**.
 
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
+   ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
 
     Once the registration has completed, you can proceed to the next panel, **Manage credentials and discovery sources**.
 

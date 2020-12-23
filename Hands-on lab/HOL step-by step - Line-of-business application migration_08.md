@@ -83,7 +83,7 @@ You will also configure a private endpoint in this network to allow private, sec
     ![Screenshot for creating subnet.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/subnet2.png?raw=true "creating subnet")
 
 
-    ![Screenshot of the Azure portal showing the create virtual network blade 'IP Addresses' tab.](images/Exercise3/create-vnet-3.png "Create Virtual Network - IP Addresses")
+   ![Screenshot of the Azure portal showing the create virtual network blade 'IP Addresses' tab.](images/Exercise3/create-vnet-3.png "Create Virtual Network - IP Addresses")
 
 4. Navigate to the **SmartHotelDBRG** resource group, and then to the database server. Under **Security**, select **Private endpoint connections**, then select **+ Private endpoint**.
 
@@ -136,6 +136,8 @@ You will also configure a private endpoint in this network to allow private, sec
    ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Find Private Endpoint IP address")
     
     >**Note**: Private DNS is used so that the database domain name, **\<your server\>.database.windows.net** resolves to the internal private endpoint IP address **192.168.0.132** when resolved from the SmartHotelVNet, but resolves to the Internet-facing IP address of the database server when resolved from outside the VNet. This means the same connection string (which contains the domain name) can be used in both cases.
+
+    >**Note**: If the private endpoint connection fails to allow the IP address or database domain name to connect to the database, it may be required to create a new firewall rule to allow the IP address ranges of the database and the private link.
 
 
 #### Task summary <!-- omit in toc -->
