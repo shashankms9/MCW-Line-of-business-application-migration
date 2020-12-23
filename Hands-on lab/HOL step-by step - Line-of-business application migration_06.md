@@ -120,7 +120,7 @@ In this task you deployed the Azure Migrate appliance in the on-premises Hyper-V
 
 In this task, you will configure the Azure Migrate appliance and use it to complete the discovery phase of the migration assessment.
 
-1.  In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Connect** on the left.
+1.  In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Connect** on the right.
 
     ![Screenshot of Hyper-V Manager showing the connect button for the Azure Migrate appliance.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyperv-4.png?raw=true "Connect to AzureMigrateAppliance")
 
