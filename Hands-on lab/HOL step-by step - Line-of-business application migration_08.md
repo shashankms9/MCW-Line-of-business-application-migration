@@ -48,7 +48,7 @@ You will also configure a private endpoint in this network to allow private, sec
 
 1. In the Azure portal's left navigation, select **+ Create a resource**, then search for and select **Virtual network**, followed by **Create**.
 
-    ![Screenshot of the Azure portal showing the create virtual network navigation.](images/Exercise3/create-vnet-1.png "New Virtual Network")
+    ![Screenshot of the Azure portal showing the create virtual network navigation.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/images/local/create-vnet.png "New Virtual Network")
 
 2. In the **Create virtual network** blade, enter the following values:
 
