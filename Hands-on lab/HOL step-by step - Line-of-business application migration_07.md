@@ -474,4 +474,3 @@ In this task you used an off-line data migration activity in the Azure Database 
 #### Exercise summary <!-- omit in toc -->
 
 In this exercise you migrated the application database from on-premises to Azure SQL Database. The Microsoft Data Migration Assistant was used for migration assessment, and the Azure Database Migration Service was used for schema migration and data migration.
-

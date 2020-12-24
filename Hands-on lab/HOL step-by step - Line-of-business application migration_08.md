@@ -507,4 +507,3 @@ In this task you installed the Azure Virtual Machine Agent (VM Agent) on your mi
 ### Exercise summary <!-- omit in toc -->
 
 In this exercise you migrated the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Server Migration. Having migrated the virtual machines, you reconfigured the application tier to use the migrated application database hosted in Azure SQL Database, and verified that the migrated application is working end-to-end. You also installed the VM Agent on the migrated virtual machines, and cleaned up migration resources.
-
