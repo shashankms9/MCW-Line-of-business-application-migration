@@ -40,7 +40,7 @@ In this task, you will create the Azure Migrate project and select the assessmen
 
     ![Screenshot of the Azure Migrate 'Create project' blade, showing the Server Assessment and Server Migration panels.](images/Exercise1/servers.png "Azure Migrate - Servers view")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created an Azure Migrate project, using the default built-in tools for server assessment and server migration.
 
@@ -112,7 +112,7 @@ You will now deploy the Azure Migrate appliance virtual machine.  Normally, you 
 
    ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyper-v3.png?raw=true "Start AzureMigrateAppliance")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you deployed the Azure Migrate appliance in the on-premises Hyper-V environment.
 
@@ -219,7 +219,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     **Wait for the discovery process to complete before proceeding to the next Task**.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you configured the Azure Migrate appliance in the on-premises Hyper-V environment and started the migration assessment discovery process.
 
@@ -277,7 +277,7 @@ In this task, you will use Azure Migrate to create a migration assessment for th
 
 13. Take a few minutes to explore other aspects of the migration assessment.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created and configured an Azure Migrate migration assessment.
 
@@ -424,7 +424,7 @@ You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dep
 
 31. The agent installation is now complete. Next, you need to generate some traffic on the SmartHotel application so the dependency visualization has some data to work with. Browse to the public IP address of the SmartHotelHost, and spend a few minutes refreshing the page and checking guests in and out.
     
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you configured the Azure Migrate dependency visualization feature, by creating a Log Analytics workspace and deploying the Azure Monitoring Agent and Dependency Agent on both Windows and Linux on-premises machines.
 
@@ -445,10 +445,11 @@ In this task, you will explore the dependency visualization feature of Azure Mig
     ![Screenshot showing the dependencies view in Azure Migrate.](images/Exercise1/dependencies.png "Dependency map")
 
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you explored the Azure Migrate dependency visualization feature.
 
-#### Exercise summary <!-- omit in toc -->
+#### Exercise summary 
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
+

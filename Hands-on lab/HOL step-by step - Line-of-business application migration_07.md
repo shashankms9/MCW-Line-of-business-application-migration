@@ -29,7 +29,7 @@ Prior to using the Azure Database Migration Service, the resource provider **Mic
     > Get-AzResourceProvider -ProviderNamespace Microsoft.DataMigration | Select-Object ProviderNamespace, RegistrationState, ResourceTypes
     > ```
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you registered the **Microsoft.DataMigration** resource provider with your subscription. This enables this subscription to use the Azure Database Migration Service.
 
@@ -87,7 +87,7 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
 5. Select **Review + Create**, then select **Create** to create the database. Wait for the deployment to complete.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created an Azure SQL Database running on an Azure SQL Database Server.
 
@@ -137,7 +137,7 @@ In this task you will create an Azure Database Migration Service resource. This 
 
 > **Note**: Creating a new migration service can take around 20 minutes. You can continue to the next task without waiting for the operation to complete. You will not use the Database Migration Service until task 5.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created a new Azure Database Migration Service resource.
 
@@ -255,7 +255,7 @@ In this task you will install and use Microsoft Data Migration Assistant (DMA) t
 
     ![Screenshot of the 'Azure Migrate - Databases' blade in the Azure portal, showing 1 assessed database.](images/Exercise2/db-assessed.png "Azure Migrate - Database Assessment")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you used Data Migration Assistant to assess an on-premises database for readiness to migrate to Azure SQL, and uploaded the assessment results to your Azure Migrate project. The DMA is integrated with Azure Migrate providing a single hub for assessment and migration tools.
 
@@ -387,7 +387,7 @@ We'll start by creating the private endpoint that allows the DMS to access the d
 
     ![Screenshot showing the DMS project summary.](images/Exercise2/project-summary.png "DMS project - summary")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created a Migration Project within the Azure Database Migration Service. This project contains the connection details for both the source and target databases. A private endpoint was used to avoid exposing the database on a public IP address.
 
@@ -421,7 +421,7 @@ The schema migration will be carried out using a schema migration activity withi
 
     ![Screenshot showing the SchemaMigration progress blade. The status is 'Completed'.](images/Exercise2/schema-completed.png "Schema migration completed")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you used a schema migration activity in the Azure Database Migration Service to migrate the database schema from the on-premises SQL Server database to the Azure SQL database.
 
@@ -467,10 +467,11 @@ As a final step, we will remove the private endpoint that allows the DMS service
 
     ![Screenshot from the SQL server showing the SmartHotel-DB-for-DMS private endpoint being removed.](images/Exercise2/private-endpoint-remove.png "Remove private endpoint")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you used an off-line data migration activity in the Azure Database Migration Service to migrate the database data from the on-premises SQL Server database to the Azure SQL database.
 
-#### Exercise summary <!-- omit in toc -->
+#### Exercise summary 
 
 In this exercise you migrated the application database from on-premises to Azure SQL Database. The Microsoft Data Migration Assistant was used for migration assessment, and the Azure Database Migration Service was used for schema migration and data migration.
+
