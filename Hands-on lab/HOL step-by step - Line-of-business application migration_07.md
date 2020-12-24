@@ -8,7 +8,7 @@ In this exercise you will migrate the application database from the on-premises 
 
 Prior to using the Azure Database Migration Service, the resource provider **Microsoft.DataMigration** must be registered in the target subscription.
 
-1. Open the Azure Cloud Shell by navigating to https://shell.azure.com. Log in using your Azure subscription credentials if prompted to do so, select a PowerShell session.
+1. Open the Azure Cloud Shell by navigating to ```https://shell.azure.com```. Log in using your Azure subscription credentials if prompted to do so, select a PowerShell session.
  
     ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/powershell.png?raw=true "selecting Powershell")
 
