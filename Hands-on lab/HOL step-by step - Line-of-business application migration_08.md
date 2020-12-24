@@ -34,7 +34,7 @@ In this task you will create a new Azure Storage Account that will be used by Az
 
 3. Select **Review + create**, then select **Create**.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created a new Azure Storage Account that will be used by Azure Migrate: Server Migration.
 
@@ -140,7 +140,7 @@ You will also configure a private endpoint in this network to allow private, sec
     >**Note**: If the private endpoint connection fails to allow the IP address or database domain name to connect to the database, it may be required to create a new firewall rule to allow the IP address ranges of the database and the private link.
 
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you created a new virtual network that will be used by your virtual machines when they are migrated to Azure. You also created a private endpoint in this network, which will be used to access the SQL database.
 
@@ -204,7 +204,7 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the 'Azure Migrate - Servers' blade showing 6 discovered servers under 'Azure Migrate: Server Migration'.](images/Exercise3/discover-8.png "Discovered servers")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you registered your Hyper-V host with the Azure Migrate Server Migration service.
 
@@ -254,7 +254,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
     ![Screenshot of the 'Azure Migrate: Server Migration - Replicating machines' blade showing the replication status as 'Protected' for all 3 servers.](images/Exercise3/replicate-9.png "Replication status")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you enabled replication from the Hyper-V host to Azure Migrate, and configured the replicated VM size in Azure.
 
@@ -288,7 +288,7 @@ In this task you will modify the settings for each replicated VM to use a static
   
     - For **UbuntuWAF** use private IP address **192.168.0.8**
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you modified the settings for each replicated VM to use a static private IP address that matches the on-premises IP addresses for that machine
 
@@ -326,7 +326,7 @@ In this task you will perform a migration of the UbuntuWAF, smarthotelweb1, and 
 
    ![Screenshot showing resources created by the test failover (VMs, disks, and network interfaces).](images/Exercise3/migrate-6.png "Migrated resources")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you used Azure Migrate to create Azure VMs using the settings you have configured, and the data replicated from the Hyper-V machines. This migrated your on-premises VMs to Azure.
 
@@ -400,7 +400,7 @@ On the migrated VM **smarthotelweb2**, this configuration needs to be updated to
 
 6. **Save** the `web.config` file and exit your Bastion remote desktop session.
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task, you updated the **smarthotelweb2** configuration to connect to the Azure SQL Database.
 
@@ -429,7 +429,7 @@ In this task, you will associate a public IP address with the UbuntuWAF VM. This
 
     ![Screenshot showing the SmartHotel application.](images/Exercise3/smarthotel.png "Migrated SmartHotel application")
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task, you assigned a public IP address to the UbuntuWAF VM and verified that the SmartHotel application is now working in Azure.
 
@@ -500,10 +500,11 @@ To demonstrate that the VM Agent is installed, we will now execute the 'Run comm
 
 
 
-#### Task summary <!-- omit in toc -->
+#### Task summary 
 
 In this task you installed the Azure Virtual Machine Agent (VM Agent) on your migrated VMs. You also cleaned up the temporary resources created during the migration process.
 
-### Exercise summary <!-- omit in toc -->
+### Exercise summary 
 
 In this exercise you migrated the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Server Migration. Having migrated the virtual machines, you reconfigured the application tier to use the migrated application database hosted in Azure SQL Database, and verified that the migrated application is working end-to-end. You also installed the VM Agent on the migrated virtual machines, and cleaned up migration resources.
+
