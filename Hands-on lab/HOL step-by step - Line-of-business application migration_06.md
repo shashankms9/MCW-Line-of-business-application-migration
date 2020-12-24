@@ -452,4 +452,3 @@ In this task you explored the Azure Migrate dependency visualization feature.
 #### Exercise summary <!-- omit in toc -->
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
-
