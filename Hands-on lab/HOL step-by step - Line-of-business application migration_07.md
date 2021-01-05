@@ -163,6 +163,7 @@ In this task you will install and use Microsoft Data Migration Assistant (DMA) t
     ![Screenshot highlighting the '+Assess' link on the 'Azure Migrate - Databases' blade in the Azure portal.](images/Exercise2/db-assess.png "Assess")
 
 5. Select **Download** to open the Data Migration Assistant download page.
+
    ![Azure portal screenshot showing the select path to create a SQL Database.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma.png?raw=true "New SQL Database")
 
 6. On the the Data Migration Assistant download page, scroll down and click on **Download**.
