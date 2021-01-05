@@ -65,7 +65,7 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
     > **Note**: You can verify the location by opening another browser tab, navigating to https://portal.azure.com and selecting Virtual Machines on the left navigation. Use the same region as the **SmartHost{SUFFIX}** virtual machine.
 
-   ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](images/Exercise2/new-db-server.png "Create Server for SQL Database")
+   ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dbserver.png?raw=true "Create Server for SQL Database")
 
     - Want to use SQL elastic pool?: **No**
   
