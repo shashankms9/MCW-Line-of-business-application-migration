@@ -202,7 +202,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 15. Select **Add single item**, select **hostlogin** as the friendly name, and enter **SmartHost{SUFFIX}** under 'IP Address / FQDN'.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/discoverysource.png?raw=true "Discovery source - SmartHotelHost")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/discoverysource-1.png?raw=true "Discovery source - SmartHotelHost")
 
     > **Note:** You can either **Add single item** at a time or **Add multiple items** in one go. There is also an option to provide Hyper-V host/cluster details through **Import CSV**.
 
