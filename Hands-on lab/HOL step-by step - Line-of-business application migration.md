@@ -1040,7 +1040,7 @@ You will also configure a private endpoint in this network to allow private, sec
   
     - Region: **Select the same location as the SmartHotelVNet**.
   
-    ![Screenshot showing the 'Create a private endpoint' blade, 'Basics' tab.](images/Exercise3/private-endpoint-1.png "Create a Private Endpoint - Basics")
+    ![Screenshot showing the 'Create a private endpoint' blade, 'Basics' tab.](images/Exercise3/private-endpoint-1-1.png "Create a Private Endpoint - Basics")
 
 6.  On the **Resource** tab, enter the following configuration then select **Next: Configuration**:
 
