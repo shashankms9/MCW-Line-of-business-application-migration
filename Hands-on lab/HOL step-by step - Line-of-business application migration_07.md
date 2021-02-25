@@ -12,8 +12,6 @@ Prior to using the Azure Database Migration Service, the resource provider **Mic
 
     ![subscriptions](./images/Exercise2/AzurePortal-subscriptions.png "selecting subscriptions")
 
-1. If you get a prompt for creating storage account, click on **Show advanced settings** and select existing Resource Group as **AzureMigrateRG** and enter **shellstorageSUFFIX** for storage account name and Enter **filestorageSUFFIX** for File Share then click on **Create Storage**.
-
     ![Data Migration resource provider.](./images/Exercise2/DataMigration-ResourceProvider.png "Find the Data.Migration resource provider")
 
 ### Task 1 summary
@@ -66,13 +64,13 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
      The final screenshot will look like this:
 
-       ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/new-db.png "Create SQL Database")
+      ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/new-db.png "Create SQL Database")
 
 1. Select **Next: Networking >** to move to the **Networking** tab. Select **Public Endpoint** option and **Yes** to both Firewall rule choices, as show in the illustration below.
 
     > **Note**: In a production scenario, you would select either **No access** or **Private Endpoint** being a more secure choice.
 
-    ![Screenshot from the Azure portal showing the Create SQL Database blade and Networking Tab.](images/Exercise2/Sql-networking.png "SQL Database Networking rules")
+    ![Screenshot from the Azure portal showing the Create SQL Database blade and Networking Tab.](images/images/Exercise2/SQL-Networking.png "SQL Database Networking rules")
 1. Select **Review + Create**, then select **Create** to create the database. Wait for the deployment to complete.
 
 1. Once complete, navigate to the database  **smarthoteldb**. From the Overview page, copy the server name of the database and keep this in a text editor as we will be using this further.

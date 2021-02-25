@@ -8,7 +8,7 @@ In this exercise, you will use Azure Migrate: Server Assessment to assess the on
 
 1. Change the default Browser to Edge using the default apps setting option in Windows.
 
-    ![In this screenshot of the selection of Edge browser is set as the default browser using the "Default apps' item in settings .](images/exercise1/edge-default-app.png "Make Edge the default browser using 'Default Apps' ")
+    ![In this screenshot of the selection of Edge browser is set as the default browser using the "Default apps' item in settings .](images/Exercise1/edge-default-app.png "Make Edge the default browser using 'Default Apps' ")
 
 1. Next, update the region + language settings of the Lab VM to region that is appropriate to your setting.
 
