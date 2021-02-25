@@ -70,7 +70,7 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
     > **Note**: In a production scenario, you would select either **No access** or **Private Endpoint** being a more secure choice.
 
-    ![Screenshot from the Azure portal showing the Create SQL Database blade and Networking Tab.](images/images/Exercise2/SQL-Networking.png "SQL Database Networking rules")
+    ![Screenshot from the Azure portal showing the Create SQL Database blade and Networking Tab.](images/Exercise2/SQL-Networking.png "SQL Database Networking rules")
 1. Select **Review + Create**, then select **Create** to create the database. Wait for the deployment to complete.
 
 1. Once complete, navigate to the database  **smarthoteldb**. From the Overview page, copy the server name of the database and keep this in a text editor as we will be using this further.
