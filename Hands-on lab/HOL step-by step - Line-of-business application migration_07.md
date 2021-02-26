@@ -377,20 +377,6 @@ The schema migration will be carried out using an offline data migration activit
 
     ![Screenshot from DMS showing the data migration in completed.](images/Exercise2/data-migration-completed.png "Data migration completed")
 
-As a final step, we will remove the private endpoint that allows the DMS service access to the database, since this access is no longer required.
-
-1. In the Azure portal, expand the portal's left navigation by selecting **Show portal menu** in the top left, then select **Resource groups**. Select **SmartHotelDBRG** resource group, then the database server **smarthoteldb{SUFFIX}**.
-
-   ![Azure portal screenshot showing the select path to create a SQL Database.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/db1.png?raw=true "New SQL Database")
-
-   ![Azure portal screenshot showing the select path to create a SQL Database.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/db2.png?raw=true "New SQL Database")
-
-   ![Azure portal screenshot showing the select path to create a SQL Database.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/db3.png?raw=true "New SQL Database") Under **Security**, select **Private endpoint connections**.
-
-1. Select the **SmartHotel-DB-for-DMS** endpoint added earlier, and select **Remove**, followed by **Yes**.
-
-    ![Screenshot from the SQL server showing the SmartHotel-DB-for-DMS private endpoint being removed.](images/Exercise2/private-endpoint-remove.png "Remove private endpoint")
-
 ### Task 7 summary
 
 In this task you used an off-line data migration activity in the Azure Database Migration Service to migrate the database data from the on-premises SQL Server database to the Azure SQL database.
