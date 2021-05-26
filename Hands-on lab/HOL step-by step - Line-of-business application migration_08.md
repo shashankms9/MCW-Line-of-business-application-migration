@@ -268,7 +268,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
 6. In the **Compute** tab, select the **Standard_F2s_v2** VM size for each virtual machine. Select the **Windows** operating system for the **smarthotelweb1** and **smarthotelweb2** virtual machines. Select **Next**.
 
-    ![(Update) Screenshot of the 'Compute' tab of the 'Replicate' wizard in Azure Migrate Server Migration. Each VM is configured to use a Standard_F2s_v2 SKU, and has the OS Type specified.](images/Exercise3/replicate-6.png "Replicate - Compute")
+    ![(Update) Screenshot of the 'Compute' tab of the 'Replicate' wizard in Azure Migrate Server Migration. Each VM is configured to use a Standard_F2s_v2 SKU, and has the OS Type specified.](images/Exercise3/replicate-6a.png "Replicate - Compute")
 
 7. In the **Disks** tab, review the settings but do not make any changes. Select **Next**, then select **Replicate** to start the server replication.
 
@@ -282,7 +282,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
 10. Select **Replicating Machines** under **Manage** on the left.  Select **Refresh** occasionally and wait until both machines have a **Protected** status, which shows the initial replication is complete. This will take several minutes.
 
-    ![(Update) Screenshot of the 'Azure Migrate: Server Migration - Replicating machines' blade showing the replication status as 'Protected' for all 3 servers.](images/Exercise3/replicate-9.png "Replication status")
+    ![(Update) Screenshot of the 'Azure Migrate: Server Migration - Replicating machines' blade showing the replication status as 'Protected' for all 3 servers.](images/Exercise3/replicate-9a.png "Replication status")
 
 ### Task 4 summary
 
@@ -294,7 +294,7 @@ In this task you will modify the settings for each replicated VM to use a static
 
 1. Still using the **Azure Migrate: Server Migration - Replicating machines** blade, select the **smarthotelweb1** virtual machine. This opens a detailed migration and replication blade for this machine. Take a moment to study this information.
 
-    ![Screenshot from the 'Azure Migrate: Server Migration - Replicating machines' blade with the smarthotelweb1 machine highlighted.](images/Exercise3/config-0.png "Replicating machines")
+    ![Screenshot from the 'Azure Migrate: Server Migration - Replicating machines' blade with the smarthotelweb1 machine highlighted.](images/Exercise3/config-0a.png "Replicating machines")
 
 2. Select **Compute and Network** under **General** on the left, then select **Edit**.
 
@@ -370,7 +370,10 @@ In this task, we will configure the WAF to point to frontend webserver.
 
 1. In the **Edit Backend Pool** Panel, Select **Virtual Machine** as the target type under **Backend Targets** and select **SmarthotelWAF1**. Then Click **Save**
 
-    ![Screenshot showing the selection of backend target type.](images/Exercise3/waf-ipconfig.png "IP configuration link")
+    ![Screenshot showing the selection of backend target type.](images/Exercise3/waf-config-backend.png "IP configuration link")
+
+1. Navigate to the **Overview** button within the blade and copy the public IP address **SmartHotel-PublicIP**
+     ![Screenshot showing the Overview panel.](images/Exercise3/Apgw-publicip.png "App gw Public IP")
 
 1. Open a new browser tab and paste the IP address into the address bar. Verify that the SmartHotel360 application is now available in Azure
 
