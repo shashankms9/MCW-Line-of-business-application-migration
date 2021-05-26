@@ -64,17 +64,17 @@ You will also configure a private endpoint in this network to allow private, sec
 
 1. Select **Next: IP Addresses >**, and enter the following configuration. Then select **Review + create**, then **Create**. Wait till the Virtual Network (VNET) is created.
 
-    - IPv4 address space: **192.168.0.0/24** 
+    - IPv4 address space: **192.168.0.0/16** 
   
     - First subnet: Select **Add subnet** and enter the following then select **Add**
 
         - Subnet name: **SmartHotel**
 
-        - Address range: **192.168.0.0/25**
+        - Address range: **192.168.0.0/24**
 
-    ![Screenshot for creating subnet.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/subnet1.png?raw=true "creating subnet")
+    ![Screenshot for creating subnet.](images/Exercise3/subnet2.png "creating subnet")
   
-   ![Screenshot of the Azure portal showing the create virtual network blade 'IP Addresses' tab.](images/Exercise3/create-vnet-3.png "Create Virtual Network - IP Addresses")
+   ![Screenshot of the Azure portal showing the create virtual network blade 'IP Addresses' tab.](images/Exercise3/create-vnet-4.png "Create Virtual Network - IP Addresses")
 
 ### Task 2 summary
 
@@ -161,7 +161,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
 1. The **Virtual machines** tab should now show the virtual machines included in the assessment. Select the **UbuntuWAF**, **smarthotelweb1**, and **smarthotelweb2** virtual machines, then select **Next**.
 
-   ![Screenshot of the 'Virtual machines' tab of the 'Replicate' wizard in Azure Migrate Server Migration. The UbuntuWAF, smarthotelweb1, and smarthotelweb2 machines are selected.](images/Exercise3/replicate-4.png "Replicate - Virtual machines")
+   ![Screenshot of the 'Virtual machines' tab of the 'Replicate' wizard in Azure Migrate Server Migration. The UbuntuWAF, smarthotelweb1, and smarthotelweb2 machines are selected.](images/Exercise3/replicate-4a.png "Replicate - Virtual machines")
 
 1. In the **Target settings** tab, select your subscription and the existing **SmartHotelRG** resource group. Under **Replication storage account** select the **migrationstorageSUFFIX** storage account and under **Virtual Network** select **SmartHotelVNet**. Under **Subnet** select **SmartHotel**. Select **Next**.
 
@@ -169,9 +169,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
     > **Note:** For simplicity, in this lab you will not configure the migrated VMs for high availability, since each application tier is implemented using a single VM.
 
-1. In the **Compute** tab, select the **Standard_F2s_v2** VM size for each virtual machine. Select the **Windows** operating system for the **smarthotelweb1**, **smarthotelweb2** virtual machines and the **Linux** operating system for the **UbuntuWAF** virtual machine. Select **Next**. 
-
-    > **Note**: If you are using an Azure Pass subscription, your subscription may not have a quota allocated for FSv2 virtual machines. In this case, use **DS2_v2 or D2s_v3** virtual machines instead.
+1. In the **Compute** tab, select the **Standard_F2s_v2** VM size for each virtual machine. Select the **Windows** operating system for the **smarthotelweb1**, **smarthotelweb2** virtual machines and the **Linux** operating system for the **UbuntuWAF** virtual machine. Select **Next**.
 
     ![Screenshot of the 'Compute' tab of the 'Replicate' wizard in Azure Migrate Server Migration. Each VM is configured to use a Standard_F2s_v2 SKU, and has the OS Type specified.](images/Exercise3/replicate-6.png "Replicate - Compute")
 
