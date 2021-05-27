@@ -60,26 +60,25 @@ You will also configure a private endpoint in this network to allow private, sec
 
     ![Screenshot of the Azure portal showing the create virtual network blade 'Basics' tab.](images/Exercise3/create-vnet-2.png "Create Virtual Network - Basics")
 
-1. Select **Next: IP Addresses >**, and enter the following configuration. 
+1. Select **Next: IP Addresses >**, and enter the following configuration.
 
+    - IPv4 address space: **192.168.0.0/16**
 
-    - IPv4 address space: **192.168.0.0/16** 
-  
     - First subnet: Select **Add subnet** and enter the following then select **Add**
 
         - Subnet name: **SmartHotel**
-   
+
         - Address range: **192.168.0.0/24**
 
-    ![Screenshot for creating subnet.](images/Exercise3/subnet2.png "creating subnet")
+        ![Screenshot for creating subnet.](images/Exercise3/subnet2.png "creating subnet")
 
     - Second subnet: Select **Add subnet** and enter the following then select **Add**
 
         - Subnet name: **SmartHotelWAF**
-   
+
         - Address range: **192.168.1.0/24**
 
-    ![Screenshot for creating subnet.](images/Exercise3/subnet2b.png "creating subnet")
+        ![Screenshot for creating subnet.](images/Exercise3/subnet2b.png "creating subnet")
 
     Finally, it should look as below.
 
@@ -300,7 +299,7 @@ In this task you will modify the settings for each replicated VM to use a static
 
    ![Screenshot of the smarthotelweb1 blade with the 'Compute and Network' and 'Edit' links highlighted.](images/Exercise3/config-1.png "Edit Compute and Network settings")
 
-3. Confirm that the VM is configured to use the **F2s_v2** VM size (or **DS2_v2 or D2s_v3** if using an Azure Pass subscription) and that **Use managed disks** is set to **Yes**.
+3. Confirm that the VM is configured to use the **F2s_v2** VM size and that **Use managed disks** is set to **Yes**.
 
 4. Under **Network Interfaces**, select **InternalNATSwitch** to open the network interface settings.
 
