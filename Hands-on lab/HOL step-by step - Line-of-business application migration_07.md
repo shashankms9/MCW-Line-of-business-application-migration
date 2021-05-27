@@ -56,6 +56,8 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
     - Compute + storage: **Standard S0**
 
+    - Backup storage redundancy: **Locally-redundant backup storage**
+
     > **Note**: To select the **Standard S0** database tier, select **Configure database**, then **Looking for basic, standard, premium?**, select **Standard** and select **Apply**.
 
     ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql1.png?raw=true "selecting database tier")
@@ -380,6 +382,41 @@ The schema migration will be carried out using an offline data migration activit
 ### Task 7 summary
 
 In this task you used an off-line data migration activity in the Azure Database Migration Service to migrate the database data from the on-premises SQL Server database to the Azure SQL database.
+
+## Task 8: Re-point SmarthotelWEb to use the migrated Azure SQL database
+
+In this task you will configure the Smart hotel web app to use the migrated Azure Database by updating  web.config file within using the connection string that points to the new Azure SQL database
+
+1. Open Hyper-V manager and connect to **Smarthotelweb2**. Login as **Administrator** and Password **demo!pass123**. 
+
+     ![Connect to Smarthotelweb2](images/Exercise2/HyperV-Connect-Web2VM.png "Open smarthotelweb2") 
+
+1. Next, open Windows Explorer and navigate to the **C:\\inetpub\\SmartHotel.Registration.Wcf** folder. Double-select the **Web.config** file and open with Notepad.
+
+1. Update the **DefaultConnection** setting to connect to your Azure SQL Database.
+
+    You can find the connection string for the Azure SQL Database in the Azure portal. Navigate to the **SmartHotelDBRG** resource group, and then to the database **smarthoteldb** and  from the overview, select **Show database connection strings**.
+
+     ![Screenshot showing the 'Show database connection strings' link for an Azure SQL Database.](images/Exercise3/show-connection-strings.png "Show database connection strings")
+
+    Copy the **ADO.NET** connection string, and paste into the web.config file on **smarthotelweb2** console window, replacing the existing connection string.  **Be careful not to overwrite the 'providerName' parameter which is specified after the connection string.**
+
+    Set the password in the connection string to **demo!pass123**.
+
+    ![Screenshot showing the user ID and Password in the web.config database connection string.](images/Exercise3/web2-connection-string.png "web.config")
+
+1. **Save** the `web.config` file and close the VM console.
+
+1. Open Hyper-V manager and shutdown the SQL Server VM **smarthotelSQL1**
+    ![Smart hotel SQL VM shutdown](images/Exercise2/HyperV-Shutdown-SQLVM.png "Shutdown the Smart hotel SQL VM ")
+
+1. Open a new browser tab within Edge browser and navigate using the IP address **192.168.0.4** into the address bar. Verify that the SmartHotel360 application is now using the data from Azure SQL database.
+
+    ![Screenshot showing the SmartHotel application.](images/Exercise3/smarthotel.png "Migrated SmartHotel application")
+
+### Task 8 summary
+
+In this task you used configured the Web application to use the new Azure SQL database
 
 ## Exercise summary
 
