@@ -12,57 +12,55 @@ In this exercise, you will use Azure Migrate: Server Assessment to assess the on
 
 1. Next, update the region + language settings of the Lab VM to region that is appropriate to your setting.
 
-## Task 1: Create the Azure Migrate project and add assessment and migration tools
+## Task 1: Select the Azure Migrate project and add assessment and migration tools
 
-In this task, you will create the Azure Migrate project and select the assessment and migration tools.
+In this task, you will and select the assessment and migration tools, the Azure Migrate project has been pre-created for you.
 
 > **Note**: In this lab, you will use the Microsoft-provided assessment and migration tools within Azure Migrate. A number of third-party tools are also integrated with Azure Migrate for both assessment and migration. You may wish to spend some time exploring these third-party options outside of this lab.
 
 1. If you are not logged in already, click on Azure portal shortcut in the desktop and log in with below Azure subscription credentials.
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject>
     * Azure Password: <inject key="AzureAdUserPassword"></inject>
 
 1. Click on **Show Portal Menu** bar and select **All services** in the portal's left navigation. then search for and select **Azure Migrate** to open the Azure Migrate Overview blade, shown below. 
  
-     ![Screenshot of the All services overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Allservices.png?raw=true "Allservices Overview blade")
+    ![Screenshot of the All services overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Allservices.png?raw=true "Allservices Overview blade")
 
-1. In the search bar, type *Azure Migrate* and select **Azure Migrate** from the suggestions to open the Azure Migrate Overview blade, as shown below. 
- 
+1. In the search bar, type *Azure Migrate* and select **Azure Migrate** from the suggestions to open the Azure Migrate Overview blade, as shown below.
+
     ![Screenshot of the Azure migrate overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Azmigrate.png?raw=true "Azmigrate Overview blade")
 
+1. Under Migration goals select **Windows, Linux and SQL Server**.
 
-1. Select **Assess and migrate servers**, then **Create project**. 
- 
-     ![Screenshot of the Access and migrate overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/assess%20and%20migrate.png?raw=true "Access and migrate Overview blade") 
- 
-     ![Screenshot of the Create project overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/createproject.png?raw=true "Create project Overview blade")
+    ![](images/Exercise1/SP-Ex1t1s4.png)
 
-1. Select your **subscription** and select existing resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a **geography** close to you to store the migration assessment data. Then select **Create**.
+1. Now, Select **Project(change)**.
 
-    >**Note**: If you are running this lab in a shared subscription you will need to use a migrate project name that is unique in the subscription. Append characters to the end of migrate project name to make your project name unique. For example: **SmartHotelMigration1234**.
+    ![](images/Exercise1/project-change.png)
 
+1. Select your **subscription** and select existing project named **SmartHotelMigrationDID**. Then select **Ok**.
 
-   ![Screenshot of the Azure Migrate 'Create project' blade, showing the Azure Migrate project name, resource group and geography.](images/Exercise1/create-project.png "Azure Migrate - Create project")
+    ![](images/Exercise1/project-select.png)
 
-1. The Azure Migrate deployment will start. Once the project creation is done, you should see the **Azure Migrate: Server Assessment** and **Azure Migrate: Server Migration** panels for the current migration project, as shown below.
+1. You should see the **Azure Migrate: Discovery and assessment** and **Azure Migrate: Server Migration** panels for the current migration project, as shown below.
 
-    ![Screenshot of the Azure Migrate 'Create project' blade, showing the Server Assessment and Server Migration panels.](images/Exercise1/servers.png "Azure Migrate - Servers view")
+    ![](images/Exercise1/SP-Ex1t1s7.png)
 
-### Task 1 summary
+### Task 1 summary 
 
 In this task you created an Azure Migrate project, using the default built-in tools for server assessment and server migration.
 
 ## Task 2: Deploy the Azure Migrate appliance
 
-In this task, you will deploy and configure the Azure Migrate appliance in the on-premises Hyper-V environment. This appliance communicates with the Hyper-V server to gather configuration and performance data about your on-premises VMs, and returns that data to your Azure Migrate project.
+In this task, you will deploy the Azure Migrate appliance in the on-premises Hyper-V environment. This appliance communicates with the Hyper-V server to gather configuration and performance data about your on-premises VMs, and returns that data to your Azure Migrate project.
 
-1. Under **Azure Migrate: Server Assessment**, select **Discover** to open the **Discover machines** blade.
-
-    ![Screenshot of the Discover machines overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Discover%20machines.png?raw=true "Discover Discover machines Overview blade")
-
+1. Under **Azure Migrate: Discovery and assessment**, select **Discover** to open the **Discover** blade.
+ 
+    ![](images/Exercise1/SP-Ex1t2s1.png)
+ 
 1. Under **Are your machines virtualized?**, select **Yes, with Hyper-V** from the **drop-down** menu.
 
-    ![Screenshot of the Azure Migrate 'Discover machines' blade, with Hyper-V selected.](images/Exercise1/h-v.png "Hyper-V virtualization option")
+    ![](images/Exercise1/SP-Ex1t2s2.png)
 
 1.  In **1: Generate Azure Migrate project key**, provide **SmartHotelAppl** as name for the Azure Migrate appliance that you will set up for discovery of Hyper-V VMs. Select **Generate key** to start the creation of the required Azure resources. 
 
@@ -78,53 +76,25 @@ In this task, you will deploy and configure the Azure Migrate appliance in the o
  
     ![Screenshot of the closing the blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Azappliance.png?raw=true "Closing the Azure migrate appliance blade") 
 
-1. Go to **Start** button in the VM, search for *Hyper-V Manager* there and select **Hyper-V Manager** to open it. 
+1. Go to **Start** button in the VM, search for *Hyper-V Manager* there and select **Hyper-V Manager** to open it, or you can click the **Hyper-v manager** icon in the taskbar. 
 
-     ![Screenshot of Hyper-V Manager, with the 'Hyperv Manager' action highlighted.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyperv0.png?raw=true "Hyperv Manager")
+     ![Screenshot of Hyper-V Manager, with the 'Hyperv Manager' action highlighted.](images/Exercise1/hyper-v-manager.png "Hyperv Manager")
 
-1. In Hyper-V Manager, select **SMARTHOST{SUFFIX}**. You should now see a list of the four VMs that comprise the on-premises SmartHotel application.
+1. In Hyper-V Manager, select **SMARTHOST{SUFFIX}**. You should now see the AzureMigrateAppliance VM and four VMs that comprise the on-premises SmartHotel application.
 
-    ![Screenshot of Hyper-V Manager on the SmartHotelHost, showing 4 VMs: smarthotelSQL1, smarthotelweb1, smarthotelweb2 and UbuntuWAF.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyper-v1.png?raw=true "Hyper-V Manager")
+    ![Screenshot of Hyper-V Manager on the SmartHotelHost, showing 4 VMs: smarthotelSQL1, smarthotelweb1, smarthotelweb2 and UbuntuWAF.](images/Exercise1/Hyperv1.png "Hyper-V Manager")
 
-You will now deploy the Azure Migrate appliance virtual machine.  Normally, you would first need to download the .ZIP file containing the appliance to your Hyper-V host, and unzip it. To save time, these steps have been completed for you.
+1. In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Start** on the right if not already running.
 
-1. In Hyper-V Manager, under **Actions**, select **Import Virtual Machine...** to open the **Import Virtual Machine** wizard.
+   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/Hyperv2.png "Start AzureMigrateAppliance")
+   
+    >**Note**: If you receive an error while starting the **AzureMigrateAppliance** VM, then you can check if vm is in Saved state. If yes, please follow the below instructions to start the vm.
 
-    ![Screenshot of Hyper-V Manager, with the 'Import Virtual Machine' action highlighted.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyper-v2.png?raw=true "Import Virtual Machine")
+     1. Right click on the Azure Migrate appliance VM and select Upgrade Configuration version.
+	  1. On the pop-up, Select discard saved state and Upgrade
+	  1. Wait until all the updates are installed, then you can login to the vm using the password : demo!pass123
 
-1. At the first step, **Before You Begin**, select **Next**.
-
-1.  At the **Locate Folder** step, select **Browse** and navigate to **F:\\VirtualMachines\\AzureMigrateAppliance** (the folder name may also include a version number), then choose **Select Folder**, then select **Next**.
-
-   ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard with the F:\VirtualMachines\AzureMigrateAppliance folder selected.](images/Exercise1/import-vm-2.png "Import Virtual Machine - Locate Folder")
-
-1. At the **Select Virtual Machine** step, the **AzureMigrateAppliance** VM should already be selected. Select **Next**.
-
-   ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/importvm1.png?raw=true "Import Virtual Machine - Locate Folder")
-
-1. At the **Choose Import Type** step, keep the default setting **Register the virtual machine in-place**. Select **Next**.
-
-   ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/importvm2.png?raw=true "Import Virtual Machine - Locate Folder")
-
-1. At the **Connect Network** step, you will see an error that the virtual switch previously used by the Azure Migrate appliance could not be found. From the **Connection** drop down, select the **Azure Migrate Switch**, then select **Next**.
-
-    ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard at the 'Connect Network' step. The 'Azure Migrate Switch' has been selected.](images/Exercise1/import-vm-4.png "Import Virtual Machine - Connect Network")
-
-    > **Note**:  The Azure Migrate appliance needs access to the Internet to upload data to Azure. It also needs access to the Hyper-V host. However, it does not need direct access to the application VMs running on the Hyper-V host. To protect the application environment, the Azure Migrate Appliance should be deployed to a separate subnet within Hyper-V, rather than in the same subnet as your application. 
-    >
-    > The Hyper-V environment has a NAT network using the IP address space 192.168.0.0/16. The internal NAT switch used by the SmartHotel application uses the subnet 192.168.0.0/24, and each VM in the application has been assigned a static IP address from this subnet.
-    >
-    > The Azure Migrate Appliance will be connected to a separate subnet 192.168.1.0/24, which has been set up for you. Using the 'Azure Migrate Switch' connects the appliance to this subnet. The appliance is assigned an IP address from this subnet using a DHCP service running on the SmartHotelHost.
-
-1. Review the summary page, then select **Finish** to create the Azure Migrate appliance VM.
-
-   ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/importvm3.png?raw=true "Import Virtual Machine - Locate Folder")
-
-1. In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Start** on the right.
-
-   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyper-v3.png?raw=true "Start AzureMigrateAppliance")
-
-### Task 2 summary 
+### Task 2 summary
 
 In this task you deployed the Azure Migrate appliance in the on-premises Hyper-V environment.
 
@@ -132,31 +102,21 @@ In this task you deployed the Azure Migrate appliance in the on-premises Hyper-V
 
 In this task, you will configure the Azure Migrate appliance and use it to complete the discovery phase of the migration assessment.
 
-1. In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Connect** on the right.
+1.  In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Connect** on the right.
 
-    ![Screenshot of Hyper-V Manager showing the connect button for the Azure Migrate appliance.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyperv-4.png?raw=true "Connect to AzureMigrateAppliance")
+    ![Screenshot of Hyper-V Manager showing the connect button for the Azure Migrate appliance.](images/Exercise1/Hyperv3.png "Connect to AzureMigrateAppliance")
 
-1. A new window will open showing the Azure Migrate appliance. Wait for the License terms screen to show, then select **Accept**.
+1.  Log in with the Administrator password **demo!pass123** (the login screen may pick up your local keyboard mapping, use the 'eyeball' icon to check).
 
-    ![Screenshot of the Azure Migrate appliance showing the license terms.](images/Exercise1/license-terms.png "Azure Migrate Appliance - License terms")
+1.  Launch the **Azure Migrate appliance configuration wizard** using the shortcut available on the desktop (wait for a minute or two, the browser will open showing the Azure Migrate appliance configuration wizard)
 
-1. On the **Customize settings** screen, set the Administrator password to **demo!pass123** (twice). Then select **Finish**.
+    ![Screenshot of the Azure Migrate appliance terms of use.](images/Exercise1/Migrateappliance.png "Desktop shortcut")
 
-    > **Note**: When entering the password, the VM uses a US keyboard mapping. If you are using a non-US keyboard, some characters may be entered incorrectly. Select the 'eyeball' icon in the second password entry box to check the password has been entered correctly.
-
-    ![Screenshot of the Azure Migrate appliance showing the set Administrator password prompt.](images/Exercise1/customize-settings.png "Azure Migrate Appliance - Set password")
-
-1. At the **Connect to AzureMigrateAppliance** prompt, set the appliance screen size using the slider, then select **Connect**.
-
-   ![Screenshot of the Hyper-V 'Import Virtual Machine' wizard](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/importvm4.png?raw=true "Import Virtual Machine - Locate Folder")
-
-1. Log in with the Administrator password **demo!pass123** (the login screen may pick up your local keyboard mapping, use the 'eyeball' icon to check).
-
-1. **Wait.** After a minute or two, the browser will open showing the Azure Migrate appliance configuration wizard (it can also be launched from the desktop shortcut).
-
-    On opening of the appliance configuration wizard, a pop-up with the license terms will appear. Accept the terms by selecting **I agree**.
+1.  On opening of the appliance configuration wizard, if a pop-up with the license terms appears, accept the terms by selecting **I agree**.
 
     ![Screenshot of the Azure Migrate appliance terms of use.](images/Exercise1/terms.png "Terms of use")
+    
+    >**Note** : If at all **Azure Migrate appliance configuration wizard** opens in **Internet Explorer** and received any compatabilty issue please close the browser and open it again using the desktop shortcut.
 
 1. Under **Set up prerequisites**, the following two steps to verify Internet connectivity and time synchronization should pass automatically.
 
@@ -168,9 +128,9 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     Once restarted, the 'Set up prerequisites' steps of the Azure Migrate wizard will re-run automatically. Once the prerequisites are completed, you can proceed to the next panel, **Register with Azure Migrate**.
 
-1. At the next phase of the wizard, **Register with Azure Migrate**, paste the **Azure Migrate project key** copied from the Azure portal earlier. (If you do not have the key, go to **Server Assessment > Discover > Manage existing appliances**, select the appliance name you provided at the time of key generation and copy the corresponding key.)
+1.  At the next phase of the wizard, **Register with Azure Migrate**, paste the **Azure Migrate project key** copied from the Azure portal earlier. (If you do not have the key, go to **Server Assessment > Discover > Manage existing appliances**, select the appliance name you provided at the time of key generation and copy the corresponding key.)
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project.](images/Exercise1/reg1.png "Register with Azure Migrate")
+   ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project.](images/Exercise1/reg1.png "Register with Azure Migrate")
 
 
 1. After you select **Login**, you will be presented with a **Device code for Azure login** pop-up .  On the **Device code for Azure login** pop-up dialog, click on **Copy code & Login**.
@@ -178,6 +138,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the login code for the Azure Migrate project.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/code1.png?raw=true "Azure Migrate login code")
 
  This will open an Azure login prompt in a new browser tab (if it doesn't appear, make sure the pop-up blocker in the browser is disabled) paste the code and click on **Next**.   You will then be asked for your Azure portal credentials to complete the login process.
+
 
    ![Screenshot of the Azure Migrate appliance login window, showing where to copy and paste the login code for the Azure Migrate project.](images/Exercise1/reg1b.png "Azure Migrate Microsoft login")
 
@@ -216,12 +177,11 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/discoverysourcevalidation.png?raw=true "Discovery source - validation successful")
 
     > **Note:** When adding discovery sources:
-    >
-    > * For successfully validated hosts/clusters, you can view more details by selecting their IP address/FQDN.
-    > * If validation fails for a host, review the error by selecting the Validation failed in the Status column of the table. Fix the issue and validate again.
-    > * To remove hosts or clusters, select **Delete**.
-    > * You can't remove a specific host from a cluster. You can only remove the entire cluster.
-    > * You can add a cluster, even if there are issues with specific hosts in the cluster.
+    > -  For successfully validated hosts/clusters, you can view more details by selecting their IP address/FQDN.
+    > -  If validation fails for a host, review the error by selecting the Validation failed in the Status column of the table. Fix the issue and validate again.
+    > -  To remove hosts or clusters, select **Delete**.
+    > -  You can't remove a specific host from a cluster. You can only remove the entire cluster.
+    > -  You can add a cluster, even if there are issues with specific hosts in the cluster.
 
 1. Select **Start discovery** to kick off VM discovery from the successfully validated hosts/clusters.
 
@@ -229,71 +189,71 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 1. Wait for the Azure Migrate status to show **Discovery has been successfully initiated**. This will take several minutes. After the discovery has been successfully initiated, you can check the discovery status against each host/cluster in the table..
 
-1. Return to the **Azure Migrate** blade in the Azure portal.  Select **Servers**, then select **Refresh**.  Under **Azure Migrate: Server Assessment** you should see a count of the number of servers discovered so far. If discovery is still in progress, select **Refresh** periodically until 5 discovered servers are shown. This may take several minutes
+1. Return to the **Azure Migrate** blade in the Azure portal.  Select **Windows, Linux and SQL Server**, then select **Refresh**.  Under **Azure Migrate: Windows, Linux and SQL Server** you should see a count of the number of servers discovered so far. If discovery is still in progress, select **Refresh** periodically until 5 discovered servers are shown. This may take several minutes
 
-    ![Screenshot of the Azure Migrate portal blade. Under 'Azure Migrate: Server Assessment' the value for 'discovered servers' is '5'.](images/Exercise1/discovered-servers.png "Discovered servers")
+    ![Screenshot of the Azure Migrate portal blade. Under 'Azure Migrate: Server Assessment' the value for 'discovered servers' is '5'.](images/Exercise1/discovered-servers-v2.png "Discovered servers")
 
     **Wait for the discovery process to complete before proceeding to the next Task**.
 
-### Task 3 summary
+### Task 3 summary 
 
 In this task you configured the Azure Migrate appliance in the on-premises Hyper-V environment and started the migration assessment discovery process.
 
-## Task 4: Create a migration assessment
+### Task 4: Create a migration assessment
 
 In this task, you will use Azure Migrate to create a migration assessment for the SmartHotel application, using the data gathered during the discovery phase.
 
-1. Continuing from Task 3, select **Assess** under **Azure Migrate: Server Assessment** to start a new migration assessment.
+1. Continuing from Task 3, select **Assess** under **Azure Migrate: Discovery and assessment** to start a new migration assessment.
 
-    ![Screenshot of the Azure Migrate portal blade, with the '+Assess' button highlighted.](images/Exercise1/start-assess.png "Start assessment")
+    ![Screenshot of the Azure Migrate portal blade, with the '+Assess' button highlighted.](images/Exercise1/start-assess-v2.png "Start assessment")
 
-1. On the Assess servers blade, ensure the Assessment type to be Azure VM and Discovery Source to be Machines discovered from Azure Migrate Appliance.
+2. On the Assess servers blade, ensure the Assessment type to be **Azure VM** and Discovery Source to be **Servers discovered from Migrate Appliance**. Under **Assessment properties**, select **Edit**.
 
-    ![Screenshot of the Azure Migrate 'Assess servers' blade, showing the assessment name.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/images/local/assess-servers.png "Assess servers - assessment name")
+    ![Screenshot of the Azure Migrate 'Assess servers' blade, showing the assessment name.](images/Exercise1/assess-servers-v2.png "Assess servers - assessment name")
 
-1. Under **Assessment properties**, select **Edit**.
+3. The **Assessment properties** blade allows you to tailor many of the settings used when making a migration assessment report. Take a few moments to explore the wide range of assessment properties. Hover over the information icons to see more details on each setting. Choose any settings you like, then select **Save**. (You have to make a change for the Save button to be enabled; if you don't want to make any changes, just close the blade.)
 
-    ![Screenshot of the Azure Migrate 'Assess servers' blade, with the 'view all' assessment properties link highlighted.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/images/local/assess-serversedit.png "Assess servers - view all assessment properties")
+    ![Screenshot of the Azure Migrate 'Assessment properties' blade, showing a wide range of migration assessment settings.](images/Exercise1/assessment-properties-v2.png "Assessment properties")
 
-1. The **Assessment properties** blade allows you to tailor many of the settings used when making a migration assessment report. Take a few moments to explore the wide range of assessment properties. Hover over the information icons to see more details on each setting. Choose any settings you like, then select **Save**. (You have to make a change for the Save button to be enabled; if you don't want to make any changes, just close the blade.)
+4. Select **Next** to move to the **Select machines to assess** tab. Enter **SmartHotelAssessment** as the assessment name, choose **Create New** and enter the group name **SmartHotel VMs**. Select the **smarthotelweb1**, **smarthotelweb2** and **UbuntuWAF** VMs.
 
-    ![Screenshot of the Azure Migrate 'Assessment properties' blade, showing a wide range of migration assessment settings.](images/Exercise1/assessment-properties.png "Assessment properties")
-
-1. Select **Next** to move to the **Select machines to assess** tab. Enter **SmartHotelAssessment** as the assessment name, choose **Create New** and enter the group name **SmartHotel VMs**. Select the **smarthotelweb1**, **smarthotelweb2** and **UbuntuWAF** VMs.
-
-    ![Screenshot of the Azure Migrate 'Assess servers' page. A new server group containing servers smarthotelweb1, smarthotelweb2, and UbuntuWAF.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/images/local/assessment-vms.png "Assessment VM group")
+    ![Screenshot of the Azure Migrate 'Assess servers' page. A new server group containing servers smarthotelweb1, smarthotelweb2, and UbuntuWAF.](images/Exercise1/assessment-vms-v2.png "Assessment VM group")
 
     **Note:** There is no need to include the **smarthotelSQL1** or **AzureMigrateAppliance** VMs in the assessment, since they will not be migrated to Azure. (The SQL Server will be migrated to the SQL Database service and the Azure Migrate Appliance is only used for migration assessment.)
 
-1. Select **Next**, followed by **Create assessment**. On the **Azure Migrate - Servers** blade, select **Refresh** periodically until the number of assessments shown is **1**. This may take several minutes.
+5. Select **Next**, followed by **Create assessment**. 
 
-    ![Screenshot from Azure Migrate showing the number of assessments as '1'.](images/Exercise1/assessments-refresh.png "Azure Migrate - Assessments (count)")
+    ![](images/Exercise1/assessment-create.png)
 
-1. Select **Assessments** under **Azure Migrate: Server Assessment** to see a list of assessments. Then select the actual assessment.
+6. On the **Windows, Linux and SQL Server** blade, select **Refresh** periodically until the number of assessments shown is **1**. This may take several minutes.
 
-    ![Screenshot showing a list of Azure Migrate assessments. There is only one assessment in the list. It has been highlighted.](images/Exercise1/assessment-list.png "Azure Migrate - Assessments (list)")
+    ![Screenshot from Azure Migrate showing the number of assessments as '1'.](images/Exercise1/ssessments-refresh-v2.png "Azure Migrate - Assessments (count)")
 
-1. Take a moment to study the assessment overview.
+7. Select **Assessments** under **Azure Migrate: Discovery and assessment** to see a list of assessments. Then select the actual assessment.
 
-    ![Screenshot showing an Azure Migrate assessment overview for the SmartHotel application.](images/Exercise1/assessment-overview.png "Assessment - Overview")
+    ![Screenshot showing a list of Azure Migrate assessments. There is only one assessment in the list. It has been highlighted.](images/Exercise1/assessment-list-v2.png "Azure Migrate - Assessments (list)")
 
-1. Select **Edit properties**. Note how you can now modify the assessment properties you chose earlier. Change a selection of settings, and **Save** your changes. After a few moments, the assessment report will update to reflect your changes.
+8. Take a moment to study the assessment overview.
 
-1. Select **Azure readiness** (either the chart or on the left navigation). Note that for the **UbuntuWAF** VM, a specific concern is listed regarding the readiness of the VM for migration.
+    ![Screenshot showing an Azure Migrate assessment overview for the SmartHotel application.](images/Exercise1/assessment-overview-v2.png "Assessment - Overview")
 
-    ![Screenshot showing the Azure Migrate assessment report on the VM readiness page, with the VM readiness for each VM highlighted.](images/Exercise1/readiness.png "Assessment - VM readiness for Azure")
+9. Select **Edit properties**. Note how you can now modify the assessment properties you chose earlier. Change a selection of settings, and **Save** your changes. After a few moments, the assessment report will update to reflect your changes.
 
-1. Select **Unknown OS** for **UbuntuWAF**. A new browser tab opens showing Azure Migrate documentation. Note on the page that the issue relates the OS not being specified in the host hypervisor, so you must confirm the OS type and version is supported.
+10. Select **Azure readiness** (either the chart or on the left navigation). Note that for the **UbuntuWAF** VM, a specific concern is listed regarding the readiness of the VM for migration.
+
+    ![Screenshot showing the Azure Migrate assessment report on the VM readiness page, with the VM readiness for each VM highlighted.](images/Exercise1/readiness-v2.png "Assessment - VM readiness for Azure")
+
+11. Select **Unknown OS** for **UbuntuWAF**. A new browser tab opens showing Azure Migrate documentation. Note on the page that the issue relates the OS not being specified in the host hypervisor, so you must confirm the OS type and version is supported.
 
     ![Screenshot of Azure documentation showing troubleshooting advice for the 'Unknown OS' issue. It states that the OS was listed as 'Other' in the host hypervisor.](images/Exercise1/unknown-os-doc.png "Assessment issues - Unknown OS")
 
-1. Return to the portal browser tab to see details of the issue. Note the recommendation to migrate the VM using **Azure Migrate: Server Migration**.
+12. Return to the portal browser tab to see details of the issue. Note the recommendation to migrate the VM using **Azure Migrate: Server Migration**.
 
     ![Screenshot of Azure portal showing the migration recommendation for the UbuntuWAF VM.](images/Exercise1/unknown-os-portal.png "UbuntuWAF migration recommendation")
 
-1. Take a few minutes to explore other aspects of the migration assessment.
+13. Take a few minutes to explore other aspects of the migration assessment.
 
-### Task 4 summary
+### Task 4 summary 
 
 In this task you created and configured an Azure Migrate migration assessment.
 
@@ -303,109 +263,122 @@ When migrating a workload to Azure, it is important to understand all workload d
 
 In this task, you will configure the Azure Migrate dependency visualization feature. This requires you to first create a Log Analytics workspace, and then to deploy agents on the to-be-migrated VMs.
 
-1. Return to the **Azure Migrate** blade in the Azure Portal, and select **Servers**. Under **Azure Migrate: Server Assessment** select **Groups**, then select the **SmartHotel VMs** group to see the group details. 
-1. Note that each VM has their **Dependencies** status as **Requires agent installation**. Select **Requires agent installation** for the **smarthotelweb1** VM.
+1. Return to the **Azure Migrate** blade in the Azure Portal, select **Windows, Linux and SQL Server**. Under **Discovery and assessment** select **Groups**,
 
-    ![Screenshot showing the SmartHotel VMs group. Each VM has dependency status 'Requires agent installation'.](images/Exercise1/requires-agent-installation.png "SmartHotel VMs server group")
+    ![](images/Exercise1/azure-migrate-group.png)   
 
-1. On the **Dependencies** blade, select **Configure OMS workspace**.
+2. Select the **SmartHotel VMs** group to see the group details. 
+
+    ![](images/Exercise1/select-group.png)   
+
+3. Note that each VM has their **Dependencies** status as **Requires agent installation**. Select **Requires agent installation** for the **smarthotelweb1** VM.
+
+    ![Screenshot showing the SmartHotel VMs group. Each VM has dependency status 'Requires agent installation'.](images/Exercise1/requires-agent-installation-v2.png "SmartHotel VMs server group")
+
+4. On the **Dependencies** blade, select **Configure OMS workspace**.
 
     ![Screenshot of the Azure Migrate 'Dependencies' blade, with the 'Configure OMS Workspace' button highlighted.](images/Exercise1/configure-oms-link.png "Configure OMS Workspace link")
 
-1. Create a new OMS workspace. Use **AzureMigrateWS{SUFFIX}** as the workspace name, Choose a workspace location close to your lab deployment, then select **Configure**.
+5. On the **Configure OMS workspace** blade, provide the below information and select **Configure**.
+
+    - OMS workspace: Enter **AzureMigrateWS{SUFFIX}**
+    - OMS workspace location: Select **East US** from the dropdown.
 
 
    ![Screenshot of the Azure Migrate 'Configure OMS workspace' blade.](images/Exercise1/configure-oms.png "OMS Workspace settings")
 
-1. Wait for the workspace to be deployed. Once it is deployed, navigate to **AzureMigrateWS{SUFFIX}** by clicking on it.
+6. Wait for the workspace to be deployed. Once it is deployed, navigate to **AzureMigrateWS{SUFFIX}** by clicking on it.
 
      ![Screenshot of the Azure Migrate 'Configure OMS workspace' blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/omsworkspace.png?raw=true "OMS Workspace settings")
 
-1. Select **Agents management** under **Settings** from the left hand side menu. Make a note of the **Workspace ID** and **Primary Key** (for example by using Notepad).
+7. Select **Agents management** under **Settings** from the left hand side menu. Make a note of the **Workspace ID** and **Primary Key** (for example by using Notepad).
 
     ![Screenshot of part of the Azure Migrate 'Dependencies' blade, showing the OMS workspace ID and key.](images/Exercise1/workspace-id-key.png "OMS Workspace ID and primary key")
 
-1. Return to the Azure Migrate 'Dependencies' blade. Copy each of the 4 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step. 
+8. Return to the Azure Migrate 'Dependencies' blade. Copy each of the 4 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step. 
    
     ![Screenshot of the Azure Migrate 'Dependencies' blade with the 4 agent download links highlighted.](images/Exercise1/agent-links.png "Agent download links")
 
-1. From **Hyper-V Manager** console, select **smarthotelweb1** and select **Connect**.
+9. From **Hyper-V Manager** console, select **smarthotelweb1** and select **Connect**.
 
-    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/hyper-v5.png?raw=true "Connect to smarthotelweb1")
+    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](images/Exercise1/Hyperv4.png "Connect to smarthotelweb1")
 
-1. Select **Connect** again when prompted and log in to the **Administrator** account using the password **demo!pass123**.
+10. Select **Connect** again when prompted and log in to the **Administrator** account using the password **demo!pass123**.
 
-1. Go to **Start** button in the **smarthotelweb1** VM and select **Internet Explorer** to open it. Paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, **Run** the installer.
+11. Go to **Start** button in the **smarthotelweb1** VM and select **Internet Explorer** to open it. Paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, **Run** the installer.
 
     > **Note:** You may need to disable **Internet Explorer Enhanced Security Configuration** on **Server Manager** under **Local Server** to complete the download. 
 
     ![Screenshot showing the Internet Explorer prompt to run the installer for the Microsoft Monitoring Agent.](images/Exercise1/mma-win-run.png "Run MMA installer")
 
-1. On the **Welcome to the Microsoft Monitoring Agent Setup Wizard** blade, select **Next**. 
+12. On the **Welcome to the Microsoft Monitoring Agent Setup Wizard** blade, select **Next**. 
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma1.png?raw=true "MMA installation")
 
-1. On the **Microsoft Software License Terms** blade, select **I Agree** 
+13. On the **Microsoft Software License Terms** blade, select **I Agree** 
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma2.png?raw=true "MMA installation")
 
-1. On the **Destination Folder** blade, leave everything as default and select **Next**. 
+14. On the **Destination Folder** blade, leave everything as default and select **Next**. 
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma3.png?raw=true "MMA installation") 
 
-1. On the **Agent Setup Options** blade, select **Connect the agent to Azure Log Analytics (OMS)** and select **Next**.
+15. On the **Agent Setup Options** blade, select **Connect the agent to Azure Log Analytics (OMS)** and select **Next**.
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma4.png?raw=true "MMA installation") 
 
-1. On the **Azure Log Analytics** blade, enter the Workspace ID and Workspace Key that you copied earlier, and select **Azure Commercial** from the Azure Cloud drop-down then select **Next**.
+16. On the **Azure Log Analytics** blade, enter the Workspace ID and Workspace Key that you copied earlier, and select **Azure Commercial** from the Azure Cloud drop-down then select **Next**.
 
     ![Screenshot of the Microsoft Monitoring Agent install wizard, showing the Log Analytics (OMS) workspace ID and key.](images/Exercise1/mma-wizard.png "MMA agent installer - workspace configuration")
 
-1. On the **Microsoft Update** blade, leave everything as default and select **Next**. 
+17. On the **Microsoft Update** blade, leave everything as default and select **Next**. 
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma7.png?raw=true "MMA installation")
 
-1. On the **Ready to Install** blade, click on **Install**. 
+18. On the **Ready to Install** blade, click on **Install**. 
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma5.png?raw=true "MMA installation")
 
-1. Select **Finish** to finish the installation process of **Microsoft Monitoring Agent for Windows**.
+19. Select **Finish** to finish the installation process of **Microsoft Monitoring Agent for Windows**.
 
     ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma6.png?raw=true "MMA installation")
 
-1. Paste the link to the Dependency Agent Windows installer into the browser address bar. **Run** the installer.
+
+
+20. Paste the link to the Dependency Agent Windows installer into the browser address bar. **Run** the installer.
 
     ![Screenshot showing the Internet Explorer prompt to run the installer for the Dependency Agent.](images/Exercise1/da-win-run.png "Run Dependency Agent installer")
 
-1. On the **License Agreement** blade, select **I Agree** to accept the agreement and continue. 
+21. On the **License Agreement** blade, select **I Agree** to accept the agreement and continue. 
 
     ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent1.png?raw=true "Dependency Agent installation") 
 
-1. On the **Completing Dependency Agent Setup** blade, select **Finish** to finish the installation process.
+22. On the **Completing Dependency Agent Setup** blade, select **Finish** to finish the installation process.
 
     ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent2.png?raw=true "Dependency Agent installation") 
+ 
 
    > **Note:** You do not need to configure the workspace ID and key when installing the Dependency Agent, since it uses the same settings as the Microsoft Monitoring Agent, which must be installed beforehand.
 
-1. Close the virtual machine connection window for the **smarthotelweb1** VM.  Connect to the **smarthotelweb2** VM and repeat the installation process (steps 10-21) for both agents (the administrator password is the same as for smarthotelweb1). Close the virtual machine connection window for the **smarthotelweb2** VM, once the installation of agents is done.
+23. Close the virtual machine connection window for the **smarthotelweb1** VM.  Connect to the **smarthotelweb2** VM and repeat the installation process (steps 10-21) for both agents (the administrator password is the same as for smarthotelweb1). Close the virtual machine connection window for the **smarthotelweb2** VM, once the installation of agents is done.
 
-    You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dependency Agent on the **UbuntuWAF** VM. To do so, you will first connect to the UbuntuWAF remotely using an SSH session.
+You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dependency Agent on the **UbuntuWAF** VM. To do so, you will first connect to the UbuntuWAF remotely using an SSH session.
 
-1. Open a command prompt using the desktop shortcut.  
+24. Open a command prompt using the desktop shortcut.  
 
     > **Note**: The SmartHotelHost runs Windows Server 2019 with the Windows Subsystem for Linux enabled. This allows the command prompt to be used as an SSH client. More info of supported Linux on Azure can be found here: https://Azure.com/Linux. 
 
-1. Enter the following command to connect to the **UbuntuWAF** VM running in Hyper-V on the SmartHotelHost:
+25. Enter the following command to connect to the **UbuntuWAF** VM running in Hyper-V on the SmartHotelHost:
 
     ```bash
     ssh demouser@192.168.0.8
     ```
 
-1. Enter 'yes' when prompted whether to connect. Use the password **demo!pass123**.
+26. Enter 'yes' when prompted whether to connect. Use the password **demo!pass123**.
 
     ![Screenshot showing the command prompt with an SSH session to UbuntuWAF.](images/Exercise1/ssh.png "SSH session with UbuntuWAF")
 
-1. Enter the following command, followed by the password **demo!pass123** when prompted:
+27. Enter the following command, followed by the password **demo!pass123** when prompted:
 
     ```s
     sudo -s
@@ -413,39 +386,37 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
     This gives the terminal session elevated privileges.
 
-1. Enter the following command, substituting \<Workspace ID\> and \<Workspace Key\> with the values copied previously. Answer **Yes** when prompted to restart services during package upgrades without asking.  
+28. Enter the following command, substituting \<Workspace ID\> and \<Workspace Key\> with the values copied previously. Answer **Yes** when prompted to restart services during package upgrades without asking.  
 
     ```s
     wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <Workspace ID> -s <Workspace Key>
     ```
 
-1. Enter the following command, substituting \<Workspace ID\> with the value copied earlier:
+29. Enter the following command, substituting \<Workspace ID\> with the value copied earlier:
 
     ```s
     /opt/microsoft/omsagent/bin/service_control restart <Workspace ID>
     ```
 
-1. Enter the following command. This downloads a script that will install the Dependency Agent.
+30. Enter the following command. This downloads a script that will install the Dependency Agent.
 
     ```s
     wget --content-disposition https://aka.ms/dependencyagentlinux -O InstallDependencyAgent-Linux64.bin
     ```
 
-1. Install the dependency agent by running the script download in the previous step.
+31. Install the dependency agent by running the script download in the previous step.
 
     ```s
     sh InstallDependencyAgent-Linux64.bin -s
     ```
 
     ![Screenshot showing that the Dependency Agent install on Linux was successful.](images/Exercise1/da-linux-done.png "Dependency Agent installation was successful")
-
-1. The agent installation is now complete. Next, you need to generate some traffic on the SmartHotel application so the dependency visualization has some data to work with. From the **SmartHotelHostRG** resources group, naviagate to **Smarthost{SUFFIX}** VM and browse to the public IP address of the VM and spend a few minutes refreshing the page and checking guests in and out.
-
-### Task 5 summary
+    
+### Task 5 summary 
 
 In this task you configured the Azure Migrate dependency visualization feature, by creating a Log Analytics workspace and deploying the Azure Monitoring Agent and Dependency Agent on both Windows and Linux on-premises machines.
 
-## Task 6: Explore dependency visualization
+### Task 6: Explore dependency visualization
 
 In this task, you will explore the dependency visualization feature of Azure Migrate. This feature uses data gathered by the dependency agent you installed in Task 5.
 
@@ -453,18 +424,19 @@ In this task, you will explore the dependency visualization feature of Azure Mig
 
     ![Screenshot showing the dependency agent installed on each VM in the Azure Migrate VM group.](images/Exercise1/dependency-viz-installed.png "Dependency agent installed")
 
-1. Select **View dependencies**.
+2. Select **View dependencies**.
 
     ![Screenshot showing the view dependencies button in the Azure Migrate VM group blade.](images/Exercise1/view-dependencies.png "View dependencies")
 
-1. Take a few minutes to explore the dependencies view. Expand each server to show the processes running on that server. Select a process to see process information. See which connections each server makes.
+3. Take a few minutes to explore the dependencies view. Expand each server to show the processes running on that server. Select a process to see process information. See which connections each server makes.
 
     ![Screenshot showing the dependencies view in Azure Migrate.](images/Exercise1/dependencies.png "Dependency map")
 
-### Task summary
+
+### Task 6 summary 
 
 In this task you explored the Azure Migrate dependency visualization feature.
 
-## Exercise summary
+## Exercise summary 
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
