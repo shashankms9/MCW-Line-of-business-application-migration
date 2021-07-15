@@ -22,9 +22,9 @@ In this task you will create a new Azure Storage Account that will be used by Az
   
     - Resource group: **AzureMigrateRG**
   
-    - Storage account name: **migrationstorage{SUFFIX}**
+    - Storage account name: **migrationstorage<inject key="DeploymentID" />**
   
-    - Location: **IMPORTANT: Select the same location as your Azure SQL Database** (can be found in the Azure portal).
+    - Location: **IMPORTANT: Select the same location as your Resource Group** (can be found in the Azure portal).
   
     - Replication: **Locally-redundant storage (LRS)**
 
@@ -56,7 +56,7 @@ You will also configure a private endpoint in this network to allow private, sec
   
     - Name: **SmartHotelVNet**
   
-    - Region: **IMPORTANT: Select the same location as your Azure SQL Database**.
+    - Region: **IMPORTANT: Select the same location as your Resource Group**.
 
     ![Screenshot of the Azure portal showing the create virtual network blade 'Basics' tab.](images/Exercise3/create-vnet-2.png "Create Virtual Network - Basics")
 
@@ -187,7 +187,9 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the Azure portal showing the 'Discover' button on the Azure Migrate Server Migration panel.](images/Exercise3/discover-1.png "Azure Migrate: Server Migration - Discover")
 
-2. In the **Discover machines** panel, under **Are your machines virtualized**, select **Yes, with Hyper-V**. Under **Target region** enter **the same region as used for your Azure SQL Database** which can be found in the Azure portal and check the confirmation checkbox. Select **Create resources** to begin the deployment of the Azure Site Recovery resource used by Azure Migrate: Server Migration for Hyper-V migrations.
+2. In the **Discover machines** panel,
+   - under **Are your machines virtualized**, select **Yes, with Hyper-V**.
+   - Under **Target region** the region should be selected as same as your Resource Group's region.
 
     ![Screenshot of the Azure portal showing the 'Discover machines' panel from Azure Migrate.](images/Exercise3/discover-2.png "Discover machines - source hypervisor and target region")
 
@@ -259,7 +261,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
     ![(Update) Screenshot of the 'Virtual machines' tab of the 'Replicate' wizard in Azure Migrate Server Migration. The smarthotelweb1, and smarthotelweb2 machines are selected.](images/Exercise3/replicate-4a.png "Replicate - Virtual machines")
 
-5. In the **Target settings** tab, select your subscription and the existing **SmartHotelRG** resource group. Under **Replication storage account** select the **migrationstorageSUFFIX** storage account and under **Virtual Network** select **SmartHotelVNet**. Under **Subnet** select **SmartHotel**. For **Azure Hybrid Benefit** click **Yes**. Select **Next**.
+5. In the **Target settings** tab, select your subscription and the existing **SmartHotelRG** resource group. Under **Replication storage account** select the **migrationstorage<inject key="DeploymentID" />** storage account and under **Virtual Network** select **SmartHotelVNet**. Under **Subnet** select **SmartHotel**. For **Azure Hybrid Benefit** click **Yes**. Select **Next**.
 
     ![Screenshot of the 'Target settings' tab of the 'Replicate' wizard in Azure Migrate Server Migration. The resource group, storage account and virtual network created earlier in this exercise are selected.](images/Exercise3/replicate-5.png "Replicate - Target settings")
 
