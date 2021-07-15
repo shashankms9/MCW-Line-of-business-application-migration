@@ -40,15 +40,15 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
     - Server: Select **Create new** and fill in the New server blade as follows then select **OK**:
 
-        - Server name: **smarthoteldb{SUFFIX}**
+        - Server name: **smarthoteldb<inject key="DeploymentID" enableCopy="false" />**
 
         - Server admin login: **demouser**
 
-        - Password: **demo!pass123**
+        - Password: **<inject key="SmartHotelHost Admin Password" />**
 
         - Location: **IMPORTANT: For most users, select the same region you used when you started your lab - this makes migration faster. If you are using an Azure Pass subscription, choose a different region to stay within the Total Regional vCPU limit.**
 
-    > **Note**: You can verify the location by opening another browser tab, navigating to https://portal.azure.com and selecting Virtual Machines on the left navigation. Use the same region as the **SmartHost{SUFFIX}** virtual machine.
+    > **Note**: You can verify the location by opening another browser tab, navigating to https://portal.azure.com and selecting Virtual Machines on the left navigation. Use the same region as the **SmartHost<inject key="DeploymentID" enableCopy="false" />** virtual machine.
 
     ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dbserver.png?raw=true "Create Server for SQL Database")
 
@@ -177,7 +177,7 @@ In this task you will use Microsoft Data Migration Assistant (DMA) to assess the
   
     - Username: **sa**
   
-    - Password: **demo!pass123**
+    - Password: **<inject key="SmartHotelHost Admin Password" />**
   
     - Encrypt connection: **Checked**
   
@@ -223,7 +223,7 @@ In this task you will create a Migration Project within the Azure Database Migra
 
 In subsequent tasks, you will use this project to migrate both the database schema and the data itself from the on-premises SQL Server database to the Azure SQL Database.
 
-1. Towards the end of Task 2, you would have copied the server name for its use in this task. If not, in the Azure portal, navigate to the **SmartHotelDBRG** resource group, and then to the database server **smarthoteldb{SUFFIX}**. From the Overview page, copy the server name of the database and keep this in a text editor as we will be using this further.
+1. Towards the end of Task 2, you would have copied the server name for its use in this task. If not, in the Azure portal, navigate to the **SmartHotelDBRG** resource group, and then to the database server **smarthoteldb<inject key="DeploymentID" enableCopy="false" />**. From the Overview page, copy the server name of the database and keep this in a text editor as we will be using this further.
 
 1. Check that the Database Migration Service resource you created in task 3 has completed provisioning. You can check the deployment status from the **Deployments** pane in the **AzureMigrateRG** resource group blade.
 
@@ -245,7 +245,7 @@ In subsequent tasks, you will use this project to migrate both the database sche
   
     - User Name: **sa**
   
-    - Password: **demo!pass123**
+    - Password: **<inject key="SmartHotelHost Admin Password" />**
 
     - Encryption connection: **Checked**
   
@@ -269,7 +269,7 @@ In subsequent tasks, you will use this project to migrate both the database sche
   
     - User Name: **demouser**
   
-    - Password: **demo!pass123**
+    - Password: **<inject key="SmartHotelHost Admin Password" />**
   
     - Encrypt connection: **Checked**
 
@@ -297,11 +297,11 @@ The schema migration will be carried out using a schema migration activity withi
 
     ![Screenshot showing the 'New Activity' button within an Azure Database Migration Service project, with 'Schema only migration' selected from the drop-down.](images/Exercise2/Migration2.png "New Activity")
 
-2. The Migration Wizard is shown. Most settings are already populated from the existing migration project. At the **Select source** step, re-enter the source database password **demo!pass123**, then select **Next: Select target**.
+2. The Migration Wizard is shown. Most settings are already populated from the existing migration project. At the **Select source** step, re-enter the source database password **<inject key="SmartHotelHost Admin Password" />**, then select **Next: Select target**.
 
     ![Screenshot showing the 'Select source' step of the DMS Migration Wizard. The source database password is highlighted.](images/Exercise2/select-source-pwd-only.png "Select source")
 
-3. At the **Select target** step, enter the password **demo!pass123** and select **Next: Select database and schema**.
+3. At the **Select target** step, enter the password **<inject key="SmartHotelHost Admin Password" />** and select **Next: Select database and schema**.
 
     ![Screenshot showing the 'Select target' step of the DMS Migration Wizard. The target database password is highlighted.](images/Exercise2/select-target-pwd-only.png "Select target")
 
@@ -331,7 +331,7 @@ The schema migration will be carried out using an offline data migration activit
 
     ![Screenshot showing the 'New Activity' button within an Azure Database Migration Service project, with 'Offline data migration' selected from the drop-down.](images/Exercise2/Migration2-1.png "New Activity - Offline data migration")
 
-1. The Migration Wizard is shown. Most settings are already populated from the existing migration project. At the **Select source** step, re-enter the source database password **demo!pass123**, then select **Next: Select target**.
+1. The Migration Wizard is shown. Most settings are already populated from the existing migration project. At the **Select source** step, re-enter the source database password **<inject key="SmartHotelHost Admin Password" />**, then select **Next: Select target**.
 
     ![Screenshot showing the 'Select source' step of the DMS Migration Wizard. The source database password is highlighted.](images/Exercise2/Migration-3.png "Select source")
 
@@ -339,7 +339,7 @@ The schema migration will be carried out using an offline data migration activit
 
     ![](images/Exercise2/Migration-4.png "select databases")
 
-1. At the **Select target** step, enter the password **demo!pass123** and select **Next: Map to target databases**.
+1. At the **Select target** step, enter the password **<inject key="SmartHotelHost Admin Password" />** and select **Next: Map to target databases**.
 
     ![Screenshot showing the 'Select target' step of the DMS Migration Wizard. The target database password is highlighted.](images/Exercise2/Migration-5.png "Select target")
 
@@ -367,11 +367,11 @@ In this task you used an off-line data migration activity in the Azure Database 
 
 In this task you will configure the Smart hotel web app to use the migrated Azure Database by updating  web.config file within using the connection string that points to the new Azure SQL database
 
-1. Open Hyper-V manager and connect to **Smarthotelweb2**. Login as **Administrator** and Password **demo!pass123**. 
+1. Open Hyper-V manager and connect to **Smarthotelweb2**. Login as **Administrator** and Password **<inject key="SmartHotelHost Admin Password" />**. 
 
      ![Connect to Smarthotelweb2](images/Exercise2/HyperV-Connect-Web2VM.png "Open smarthotelweb2") 
 
-1. Next, open Windows Explorer and navigate to the **C:\\inetpub\\SmartHotel.Registration.Wcf** folder. Double-select the **Web.config** file and open with Notepad.
+1. Next, open File Explorer and navigate to the **C:\\inetpub\\SmartHotel.Registration.Wcf** folder. Double-select the **Web.config** file and open with Notepad.
 
 1. Update the **DefaultConnection** setting to connect to your Azure SQL Database.
 
@@ -381,7 +381,7 @@ In this task you will configure the Smart hotel web app to use the migrated Azur
 
     Copy the **ADO.NET** connection string, and paste into the web.config file on **smarthotelweb2** console window, replacing the existing connection string.  **Be careful not to overwrite the 'providerName' parameter which is specified after the connection string.**
 
-    Set the password in the connection string to **demo!pass123**.
+    Set the password in the connection string to **<inject key="SmartHotelHost Admin Password" />**.
 
     ![Screenshot showing the user ID and Password in the web.config database connection string.](images/Exercise3/web2-connection-string.png "web.config")
 
