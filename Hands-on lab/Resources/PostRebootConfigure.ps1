@@ -148,7 +148,15 @@ Function Rearm-VM {
     Write-Output "Getting IP for $ComputerName"
 
     $vm = Get-VM -Name $ComputerName
-    $ip = $vm.NetworkAdapters[0].IPAddresses[0]
+    # Wait for VM to become available and on the network before proceeding to re-arm licenses
+    do {
+        if ($vm.state -eq "Off")  {
+            Write-Output "Attempting to start $ComputerName..."
+            $vm | Start-VM
+        }
+        sleep -Seconds 5
+        $ip = $vm.NetworkAdapters[0].IpAddresses[0]
+    } until ($ip)
 
     Write-Output "Creating credentials object"
     $localusername = "$computerName\$Username"
