@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Line of business application migration",
+    "Name": "Microsoft Azure Immersion Workshops : Infrastructure Migration",
     "Language": "English",
     "Files": [
       {
@@ -23,7 +23,7 @@
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/3.md",
         "Order": 5
       },
-       {
+      {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/lab-completed.md",
         "Order": 6
       }
