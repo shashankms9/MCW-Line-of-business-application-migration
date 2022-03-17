@@ -3,7 +3,7 @@
 ### 17 March 2022
 
   - Minor updates in the Lab Guide.
-  - Updated the lab guide as we have automated the creation of **Azure Database Migration Service** in Exercise 2.
+  - In Exercise 2, the task for creating **Azure Database Migration Service** has been removed. Attendees will not be performing the task as the resource is being created now as part of pre-requisite.
 
 -----------------
 
