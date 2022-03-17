@@ -1,5 +1,12 @@
 # Release Notes
 
+### 17 March 2022
+
+  - Minor updates in the Lab Guide.
+  - Updated the lab guide as we have automated the creation of **Azure Database Migration Service** in Exercise 2.
+
+-----------------
+
 ### 08 February 2022
 
   - Minor updates in the Lab Guide.
