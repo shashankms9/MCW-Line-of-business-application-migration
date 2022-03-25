@@ -4,127 +4,7 @@ Duration: 60 minutes
 
 In this exercise you will migrate the application database from the on-premises Hyper-V virtual machine to a new database hosted in the Azure SQL Database service. You will use the Azure Database Migration Service to complete the migration, which uses the Microsoft Data Migration Assistant for the database assessment and schema migration phases.
 
-## Task 1: Microsoft.DataMigration resource provider check
-
-Prior to using the Azure Database Migration Service, the resource provider **Microsoft.DataMigration** must be registered in the target subscription. Foll
-
-1. Open the Azure Portal and navigate to ```Subscriptions```. If prompted, log in using your Azure subscription credentials provided. Select the Subscription, within it find the **Resource Providers** option and find the **Microsoft.DataMigration** resource provider. It should be marked as **registered** but if its not use the **Register** link above to register it.
-
-    ![subscriptions](./images/Exercise2/AzurePortal-subscriptions.png "selecting subscriptions")
-
-    ![Data Migration resource provider.](./images/Exercise2/DataMigration-ResourceProvider.png "Find the Data.Migration resource provider")
-
-### Task 1 summary
-
-In this task you have confirmed the **Microsoft.DataMigration** resource provider is registered  with your subscription. This resource provider is required to use the Azure Database Migration Service.
-
-## Task 2: Create an Azure SQL Database
-
-In this task you will create a new Azure SQL database to migrate the on-premises database to.
-
-> **Note**: This lab focuses on simplicity to teach the participant the technical tools required. In the , more consideration should go into the long-term plan prior to creating the first DB. For instance: Will this DB live in an Azure landing zone? Who will operate this environment post-migration? What policies are in place that the migration team should be aware of prior to migration? These landing zone and operating model related topics are covered in the Cloud Adoption Framework’s Ready methodology. You don’t need to deviate from the script, but be familiar with the four-step process in that methodology, so you can field those types of a questions if they come up in the lab.
-
-1. Open the Azure portal at https://portal.azure.com and log in using your subscription credentials if it's not still up.
-
-1. Expand the portal's left navigation by selecting **Show portal menu** in the top left then select **+ Create a resource**, then select **Databases**, then select **SQL Database**.
-
-    ![Azure portal screenshot showing the select path to create a SQL Database.](images/Exercise2/new-sql-db.png "New SQL Database")
-
-1. The **Create SQL Database** blade opens, showing the **Basics** tab. Complete the form as follows:
-
-    - Subscription: **Select your subscription**.
-
-    - Resource group: (select existing) **SmartHotelDBRG**
-
-    - Database name: **smarthoteldb**
-
-    - Server: Select **Create new** and fill in the New server blade as follows then select **OK**:
-
-        - Server name: **smarthoteldb<inject key="DeploymentID" enableCopy="false" />**
-
-        - Server admin login: **demouser**
-
-        - Password: **<inject key="SmartHotelHost Admin Password" />**
-
-        - Location: **IMPORTANT: For most users, select the same region you used when you started your lab - this makes migration faster. If you are using an Azure Pass subscription, choose a different region to stay within the Total Regional vCPU limit.**
-
-    > **Note**: You can verify the location by opening another browser tab, navigating to https://portal.azure.com and selecting Virtual Machines on the left navigation. Use the same region as the **SmartHost<inject key="DeploymentID" enableCopy="false" />** virtual machine.
-
-    ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dbserver.png?raw=true "Create Server for SQL Database")
-
-    - Want to use SQL elastic pool?: **No**
-
-    - Compute + storage: **Standard S0**
-
-    - Backup storage redundancy: **Locally-redundant backup storage**
-
-    > **Note**: To select the **Standard S0** database tier, select **Configure database**, then **Looking for basic, standard, premium?**, select **Standard** and select **Apply**.
-
-    ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql1.png?raw=true "selecting database tier")
-
-    ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql2.png?raw=true "selecting database tier")
-
-     The final screenshot will look like this:
-
-      ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/new-db.png "Create SQL Database")
-
-1. Select **Next: Networking >** to move to the **Networking** tab. Select **Public Endpoint** option and **Yes** to both Firewall rule choices, as show in the illustration below.
-
-    > **Note**: In a production scenario, you would select either **No access** or **Private Endpoint** being a more secure choice.
-
-    ![Screenshot from the Azure portal showing the Create SQL Database blade and Networking Tab.](images/Exercise2/SQL-Networking.png "SQL Database Networking rules")
-
-1. Select **Review + Create**, then select **Create** to create the database. Wait for the deployment to complete.
-
-1. Once complete, navigate to the database  **smarthoteldb**. From the Overview page, copy the server name of the database and keep this in a text editor as we will be using this further.
-
-### Task 2 summary
-
-In this task you created an Azure SQL Database running on an Azure SQL Database Server.
-
-## Task 3: Create the Database Migration Service
-
-In this task you will create an Azure Database Migration Service resource. This resource is managed by the Microsoft.DataMigration resource provider which you registered in task 1.
-
-> **Note**: The Azure Database Migrate Service (DMS) requires network access to your SQL Server database (simulated as on-premises) to retrieve the data for transfer. To achieve this access, the DMS is deployed into an Azure VNet. In an actual production scenario, you would require connecting to it securely to your database, for example by using a Site-to-Site VPN or ExpressRoute connection.
->
-> In this lab, the 'on-premises' environment is simulated by a Hyper-V host running in an Azure VM. This VM is deployed to the 'smarthotelvnet' VNet. Hence for this lab, the DMS will be deployed to this VNET (called 'smarthotelvnet').
-
-1. In the Azure portal, expand the portal's left navigation and select **+ Create a resource**, search for **Azure Database Migration Service** and select it.
-
-1. On the **Azure Database Migration Service** blade, select **Create**.
-
-    ![Screenshot showing the DMS 'create' button.](images/Exercise2/dms-create-1.png "Create Azure Database Migration Service")
-
-1. In the **Create Migration Service** blade, on the **Basics** tab, enter the following values:
-
-    - Subscription: **Select your Azure subscription**.
-  
-    - Resource group: **AzureMigrateRG**
-  
-    - Service Name: **SmartHotelDBMigration**
-  
-    - Location: **Choose the same region as the SmartHotel host**.
-
-    - Service mode: **Azure**
-  
-    - Pricing tier: **Standard: 1 vCore**
-
-    ![Screenshot showing the Create DMS 'Basics' tab.](images/Exercise2/create-dms.png "Create DMS - Basics")
-
-1. Select **Next: Networking** to move to the **Networking** tab, and select the **smarthostvnet/host..** virtual network and subnet in the **SmartHotelHostRG** resource group.
-   
-    ![Screenshot showing the Create DMS 'Networking' tab.](images/Exercise2/create-dms-network-uk.png "Create DMS - Networking")
-
-1. Select **Review + create**, followed by **Create**.
-
-> **Note**: Creating a new migration service can take around 20 minutes. You can continue to the next task without waiting for the operation to complete. You will not use the Database Migration Service until task 5.
-
-### Task 3 summary
-
-In this task you created a new Azure Database Migration Service resource.
-
-## Task 4: Assess the on-premises database using Data Migration Assistant
+## Task 1: Assess the on-premises database using Data Migration Assistant
 
 In this task you will use Microsoft Data Migration Assistant (DMA) to assess the on-premises database. DMA is integrated with Azure Migrate providing a single hub for assessment and migration tools.
 
@@ -140,7 +20,7 @@ In this task you will use Microsoft Data Migration Assistant (DMA) to assess the
 
 1. Under **Migration tool**, click on **Click here** link to add a tool, then select **Azure Migrate: Database Migration**, then select **Add tool**.
 
-    ![Screenshot showing the 'Select assessment tool' step of the 'Add a tool' wizard in Azure Migrate, with the 'Azure Migrate: Database Migration' tool selected.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/addtool-3.png?raw=true "Add database migration tool")
+    ![Screenshot showing the 'Select assessment tool' step of the 'Add a tool' wizard in Azure Migrate, with the 'Azure Migrate: Database Migration' tool selected.](images/Exercise2/addtool-3.png "Add database migration tool")
     
     ![](images/Exercise2/addtool-4.png)
 
@@ -213,11 +93,11 @@ In this task you will use Microsoft Data Migration Assistant (DMA) to assess the
 
     ![Screenshot of the 'Azure Migrate - Databases' blade in the Azure portal, showing 1 assessed database.](images/Exercise2/db-assessed-2.png "Azure Migrate - Database Assessment")
 
-### Task 4 summary
+### Task 1 summary
 
 In this task you used Data Migration Assistant to assess an on-premises database for readiness to migrate to Azure SQL, and uploaded the assessment results to your Azure Migrate project. The DMA is integrated with Azure Migrate providing a single hub for assessment and migration tools.
 
-## Task 5: Create a DMS migration project
+## Task 2: Create a DMS migration project
 
 In this task you will create a Migration Project within the Azure Database Migration Service (DMS). This project contains the connection details for both the source and target databases.
 
@@ -283,11 +163,11 @@ In subsequent tasks, you will use this project to migrate both the database sche
 
     ![Screenshot showing the DMS project summary.](images/Exercise2/project-summary.png "DMS project - summary")
 
-### Task 5 summary
+### Task 2 summary
 
 In this task you created a Migration Project within the Azure Database Migration Service. This project contains the connection details for both the source and target databases. A private endpoint was used to avoid exposing the database on a public IP address.
 
-## Task 6: Migrate the database schema
+## Task 3: Migrate the database schema
 
 In this task you will use the Azure Database Migration Service to migrate the database schema to Azure SQL Database. This step is a prerequisite to migrating the data itself.
 
@@ -317,11 +197,11 @@ The schema migration will be carried out using a schema migration activity withi
 
     ![Screenshot showing the SchemaMigration progress blade. The status is 'Completed'.](images/Exercise2/schema-completed.png "Schema migration completed")
 
-### Task 6 summary
+### Task 3 summary
 
 In this task you used a schema migration activity in the Azure Database Migration Service to migrate the database schema from the on-premises SQL Server database to the Azure SQL database.
 
-## Task 7: Migrate the on-premises data
+## Task 4: Migrate the on-premises data
 
 In this task you will use the Azure Database Migration Service to migrate the database data to Azure SQL Database.
 
@@ -359,11 +239,11 @@ The schema migration will be carried out using an offline data migration activit
 
     ![Screenshot from DMS showing the data migration in completed.](images/Exercise2/data-migration-completed.png "Data migration completed")
 
-### Task 7 summary
+### Task 4 summary
 
 In this task you used an off-line data migration activity in the Azure Database Migration Service to migrate the database data from the on-premises SQL Server database to the Azure SQL database.
 
-## Task 8: Re-point data connection in SmarthotelWEb to use the migrated Azure SQL database
+## Task 5: Re-point data connection in SmarthotelWEb to use the migrated Azure SQL database
 
 In this task you will configure the Smart hotel web app to use the migrated Azure Database by updating  web.config file within using the connection string that points to the new Azure SQL database
 
@@ -394,7 +274,7 @@ In this task you will configure the Smart hotel web app to use the migrated Azur
 
     ![Screenshot showing the SmartHotel application.](images/Exercise3/smarthotel.png "Migrated SmartHotel application")
 
-### Task 8 summary
+### Task 5 summary
 
 In this task you used configured the Web application to use the new Azure SQL database
 
