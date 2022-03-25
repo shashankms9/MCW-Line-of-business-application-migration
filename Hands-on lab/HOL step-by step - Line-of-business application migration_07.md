@@ -14,7 +14,7 @@ In this task you will use Microsoft Data Migration Assistant (DMA) to assess the
 
 1. Under **Assessment tools**, click on **Click here** link to add a tool, then select **Azure Migrate: Database Assessment**, then select **Add tool**
 
-    ![Screenshot showing the 'Select assessment tool' step of the 'Add a tool' wizard in Azure Migrate, with the 'Azure Migrate: Database Assessment' tool selected.](images/Exercise2/addtool-1-2.png "Add database assessment tool")
+    ![Screenshot showing the 'Select assessment tool' step of the 'Add a tool' wizard in Azure Migrate, with the 'Azure Migrate: Database Assessment' tool selected](images/Exercise2/addtool-1-2.png "Add database assessment tool")
     
     ![](images/Exercise2/addtool-2.png)
 
