@@ -1,5 +1,12 @@
 # Release Notes
 
+### 36 April 2022
+
+  - Minor updates in the Lab Guide.
+ 
+     - Updated the screenshots and instructions in Exercise 1 as per new UI of **Azure Migrate appliance configuration wizard**.
+-----------------
+
 ### 1 April 2022
 
   - Minor updates in the Lab Guide.
