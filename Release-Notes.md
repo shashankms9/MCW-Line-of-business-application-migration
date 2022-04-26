@@ -1,6 +1,6 @@
 # Release Notes
 
-### 36 April 2022
+### 26 April 2022
 
   - Minor updates in the Lab Guide.
  
