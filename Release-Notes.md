@@ -1,5 +1,12 @@
 # Release Notes
 
+### 13 May 2022
+
+  - Minor updates in the Lab Guide.
+ 
+     - Updated the screenshots and instructions in **Exercise 2** and **Exercise 3** as per new UI of **SQL DB server** and also for better user experience.
+-----------------
+
 ### 26 April 2022
 
   - Minor updates in the Lab Guide.
