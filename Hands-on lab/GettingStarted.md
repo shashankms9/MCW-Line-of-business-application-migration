@@ -6,7 +6,7 @@
 
 1. To get the lab environment details, you can select **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from lower right corner. Also, you can start, stop and restart virtual machines from **Virtual Machines** tab.
 
-   ![](./images/GettingStarted/cloudlabs-env-page.png "Lab Environment")
+   ![](../Hands-on%20lab/images/splitwindow1.png "Lab Environment")
  
     > You will see SUFFIX value on **Environment Details** tab, use it whereever you see SUFFIX or DeploymentID in lab steps.
 
