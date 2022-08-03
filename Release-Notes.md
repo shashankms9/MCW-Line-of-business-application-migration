@@ -1,5 +1,11 @@
 # Release Notes
 
+### 28 June 2022
+
+  - Minor updates in the Lab Guide.
+      
+       - Updated the screenshots and instructions in **Exercise 1** and **Exercise 3** as per new UI of Azure Migrate **Migration tools wizard**.
+
 ### 22 June 2022
 
   - Minor updates in the Lab Guide.
