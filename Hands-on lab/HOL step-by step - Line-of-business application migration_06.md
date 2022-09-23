@@ -24,11 +24,11 @@ In this task, you will and select the assessment and migration tools, the Azure 
 
 1. Click on **Show Portal Menu** bar and select **All services** in the portal's left navigation. then search for and select **Azure Migrate** to open the Azure Migrate Overview blade, shown below. 
  
-    ![Screenshot of the All services overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Allservices.png?raw=true "Allservices Overview blade")
+    ![Screenshot of the All services overview blade.](images/Exercise1/Allservices.png "Allservices Overview blade")
 
 1. In the search bar, type *Azure Migrate* and select **Azure Migrate** from the suggestions to open the Azure Migrate Overview blade, as shown below.
 
-    ![Screenshot of the Azure migrate overview blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Azmigrate.png?raw=true "Azmigrate Overview blade")
+    ![Screenshot of the Azure migrate overview blade.](images/Exercise1/Azmigrate.png "Azmigrate Overview blade")
 
 1. Under Migration goals select **Windows, Linux and SQL Server**.
 
@@ -74,7 +74,7 @@ In this task, you will deploy the Azure Migrate appliance in the on-premises Hyp
 
 1.  Read through the instructions on how to download, deploy and configure the Azure Migrate appliance. Close the 'Discover machines' blade by clicking on cross button **X** (do **not** download the .VHD file or .ZIP file, the .VHD has already been downloaded for you). 
  
-    ![Screenshot of the closing the blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/Azappliance.png?raw=true "Closing the Azure migrate appliance blade") 
+    ![Screenshot of the closing the blade.](images/Exercise1/Azappliance.png "Closing the Azure migrate appliance blade") 
 
 1. Go to **Start** button in the VM, search for *Hyper-V Manager* there and select **Hyper-V Manager** to open it, or you can click the **Hyper-v manager** icon in the taskbar. 
 
@@ -135,7 +135,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 1. After you select **Login**, you will be presented with a **Device code for Azure login** pop-up .  On the **Device code for Azure login** pop-up dialog, click on **Copy code & Login**.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the login code for the Azure Migrate project.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/code1.png?raw=true "Azure Migrate login code")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the login code for the Azure Migrate project.](images/Exercise1/azmigrate-05.png "Azure Migrate login code")
 
  This will open an Azure login prompt in a new browser tab (if it doesn't appear, make sure the pop-up blocker in the browser is disabled) paste the code and click on **Next**.   You will then be asked for your Azure portal credentials to complete the login process.
 
@@ -168,13 +168,13 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 1. Select **Add single item**, select **hostlogin** as the friendly name, and enter **SmartHost<inject key="DeploymentID" enableCopy="false" />** under 'IP Address / FQDN'.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/discoverysource-1.png?raw=true "Discovery source - SmartHotelHost")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](images/Exercise1/discoverysource-1.png "Discovery source - SmartHotelHost")
 
     > **Note:** You can either **Add single item** at a time or **Add multiple items** in one go. There is also an option to provide Hyper-V host/cluster details through **Import CSV**.
 
 1. Select **Save**. The appliance will validate the connection to the Hyper-V hosts/clusters added and show the **Validation status** in the table against each host/cluster
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/discoverysourcevalidation.png?raw=true "Discovery source - validation successful")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](images/Exercise1/discoverysourcevalidation.png "Discovery source - validation successful")
 
     > **Note:** When adding discovery sources:
     > -  For successfully validated hosts/clusters, you can view more details by selecting their IP address/FQDN.
@@ -289,7 +289,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 6. Wait for the workspace to be deployed. Once it is deployed, navigate to **AzureMigrateWS<inject key="DeploymentID" enableCopy="false" />** by clicking on it.
 
-     ![Screenshot of the Azure Migrate 'Configure log workspace' blade.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/omsworkspace.png?raw=true "OMS Workspace settings")
+     ![Screenshot of the Azure Migrate 'Configure OMS workspace' blade.](images/Exercise1/omsworkspace.png "OMS Workspace settings")
 
 7. Select **Agents management** under **Settings** from the left hand side menu. Make a note of the **Workspace ID** and **Primary Key** (for example by using Notepad).
 
@@ -313,19 +313,19 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 12. On the **Welcome to the Microsoft Monitoring Agent Setup Wizard** blade, select **Next**. 
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma1.png?raw=true "MMA installation")
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma1.png "MMA installation")
 
 13. On the **Microsoft Software License Terms** blade, select **I Agree** 
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma2.png?raw=true "MMA installation")
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma2.png "MMA installation")
 
 14. On the **Destination Folder** blade, leave everything as default and select **Next**. 
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma3.png?raw=true "MMA installation") 
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma3.png "MMA installation") 
 
 15. On the **Agent Setup Options** blade, select **Connect the agent to Azure Log Analytics (OMS)** and select **Next**.
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma4.png?raw=true "MMA installation") 
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma4.png "MMA installation") 
 
 16. On the **Azure Log Analytics** blade, enter the Workspace ID and Workspace Key that you copied earlier, and select **Azure Commercial** from the Azure Cloud drop-down then select **Next**.
 
@@ -333,16 +333,15 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 17. On the **Microsoft Update** blade, leave everything as default and select **Next**. 
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma7.png?raw=true "MMA installation")
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma7.png "MMA installation")
 
 18. On the **Ready to Install** blade, click on **Install**. 
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma5.png?raw=true "MMA installation")
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma5.png "MMA installation")
 
 19. Select **Finish** to finish the installation process of **Microsoft Monitoring Agent for Windows**.
 
-    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/mma6.png?raw=true "MMA installation")
-
+    ![Screenshot for installing 64-bit Microsoft Monitoring Agent for Windows.](images/Exercise1/mma6.png "MMA installation")
 
 
 20. Paste the link to the Dependency Agent Windows installer into the browser address bar. **Run** the installer.
@@ -351,11 +350,11 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 21. On the **License Agreement** blade, select **I Agree** to accept the agreement and continue. 
 
-    ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent1.png?raw=true "Dependency Agent installation") 
+    ![Screenshot for installing Dependency Agent.](images/Exercise1/dependencyagent1.png "Dependency Agent installation") 
 
 22. On the **Completing Dependency Agent Setup** blade, select **Finish** to finish the installation process.
 
-    ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent2.png?raw=true "Dependency Agent installation") 
+    ![Screenshot for installing Dependency Agent.](images/Exercise1/dependencyagent2.png "Dependency Agent installation") 
  
 
    > **Note:** You do not need to configure the workspace ID and key when installing the Dependency Agent, since it uses the same settings as the Microsoft Monitoring Agent, which must be installed beforehand.
