@@ -1,14 +1,14 @@
-# Exercise 3: Migrate the application and web tiers using Azure Migrate: Server Migration
+# Exercise 3: Migrate the application and web tiers using Azure Migrate: Migration and modernization
 
 Duration: 90 minutes
 
-In this exercise you will migrate the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Server Migration.
+In this exercise you will migrate the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Migration and modernization.
 
 Having migrated the virtual machines, you will reconfigure the application tier to use the application database hosted in Azure SQL. This will enable you to verify that the migration application is working end-to-end.
 
 ## Task 1: Create a Storage Account
 
-In this task you will create a new Azure Storage Account that will be used by Azure Migrate: Server Migration for storage of your virtual machine data during migration.
+In this task you will create a new Azure Storage Account that will be used by Azure Migrate: Migration and modernization for storage of your virtual machine data during migration.
 
 > **Note:** This lab focuses on the technical tools required for workload migration. In a real-world scenario, more consideration should go into the long-term plan prior to migrating assets. The landing zone required to host VMs should also include considerations for network traffic, access control, resource organization, and governance. For example, the CAF Migration Blueprint and CAF Foundation Blueprint can be used to deploy a pre-defined landing zone, and demonstrate the potential of an Infrastructure as Code (IaC) approach to infrastructure resource management. For more information, see [Azure Landing Zones](<https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/>) and [Cloud Adoption Framework Azure Migration landing zone Blueprint sample](<https://docs.microsoft.com/azure/governance/blueprints/samples/caf-migrate-landing-zone/>).
 
@@ -34,7 +34,7 @@ In this task you will create a new Azure Storage Account that will be used by Az
 
 ### Task 1 summary
 
-In this task you created a new Azure Storage Account that will be used by Azure Migrate: Server Migration.
+In this task you created a new Azure Storage Account that will be used by Azure Migrate: Migration and modernization.
 
 ## Task 2: Create a Virtual Network
 
@@ -177,13 +177,13 @@ You will also configure a private endpoint in this network to allow private, sec
 
 In this task you created a new virtual network that will be used by your virtual machines when they are migrated to Azure. You also provisioned a Azure Gateway WAF firewall
 
-## Task 3: Register the Hyper-V Host with Azure Migrate: Server Migration
+## Task 3: Register the Hyper-V Host with Azure Migrate: Migration and modernization
 
-In this task, you will register your Hyper-V host with the Azure Migrate: Server Migration service. This service uses Azure Site Recovery as the underlying migration engine. As part of the registration process, you will deploy the Azure Site Recovery Provider on your Hyper-V host.
+In this task, you will register your Hyper-V host with the Azure Migrate: Migration and modernization service. This service uses Azure Site Recovery as the underlying migration engine. As part of the registration process, you will deploy the Azure Site Recovery Provider on your Hyper-V host.
 
 1. Return to the **Azure Migrate** blade in the Azure Portal, and select **Servers** under **Migration goals** on the left. Under **Migration Tools**, select **Discover**.
 
-    **Note:** You may need to add the migration tool yourself by following the link below the **Migration Tools** section, selecting **Azure Migrate: Server Migration**, then selecting **Add tool(s)**. 
+    **Note:** You may need to add the migration tool yourself by following the link below the **Migration Tools** section, selecting **Azure Migrate: Migration and modernization**, then selecting **Add tool(s)**. 
 
     ![Screenshot of the Azure portal showing the 'Discover' button on the Azure Migrate Server Migration panel.](images/Exercise3/discover-1.png "Azure Migrate: Server Migration - Discover")
 
@@ -219,7 +219,7 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the ASR provider showing successful registration.](images/Exercise3/asr-registered.png "Registration complete")
 
-10. Return to the Azure Migrate browser window. **Refresh** your browser, then re-open the **Discover machines** panel by selecting **Discover** under **Azure Migrate: Server Migration** and selecting **Yes, with Hyper-V** for **Are your machines virtualized?**.
+10. Return to the Azure Migrate browser window. **Refresh** your browser, then re-open the **Discover machines** panel by selecting **Discover** under **Azure Migrate: Migration and modernization** and selecting **Yes, with Hyper-V** for **Are your machines virtualized?**.
 
 11. Select **Finalize registration**, which should now be enabled.
 
@@ -233,19 +233,19 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the 'Discover machines' panel from Azure Migrate, showing the 'Registration finalized' message.](images/Exercise3/discover-7.png "Registration finalized")
 
-14. The **Azure Migrate: Server Migration** panel should now show 5 discovered servers..
+14. The **Azure Migrate: Migration and modernization** panel should now show 5 discovered servers..
 
     ![Screenshot of the 'Azure Migrate - Servers' blade showing 6 discovered servers under 'Azure Migrate: Server Migration'.](images/Exercise3/discover-8.png "Discovered servers")
 
 ### Task 3 summary
 
-In this task you registered your Hyper-V host with the Azure Migrate Server Migration service.
+In this task you registered your Hyper-V host with the Azure Migrate Migration service.
 
 ## Task 4: Enable Replication from Hyper-V to Azure Migrate
 
-In this task, you will configure and enable the replication of your on-premises virtual machines from Hyper-V to the Azure Migrate Server Migration service.
+In this task, you will configure and enable the replication of your on-premises virtual machines from Hyper-V to the Azure Migrate Migration service.
 
-1. Under **Azure Migrate: Server Migration**, select **Replicate**. This opens the **Replicate** wizard.
+1. Under **Azure Migrate: Migration and modernization**, select **Replicate**. This opens the **Replicate** wizard.
 
     ![Screenshot highlighting the 'Replicate' button in the 'Azure Migrate: Server Migration' panel of the Azure Migrate - Servers blade.](images/Exercise3/replicate-1.png "Replicate link")
 
@@ -273,7 +273,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
 7. In the **Disks** tab, review the settings but do not make any changes. Select **Next**, then select **Replicate** to start the server replication.
 
-8. In the **Azure Migrate - Servers** blade, under **Azure Migrate: Server Migration**, select the **Overview** button.
+8. In the **Azure Migrate - Servers** blade, under **Azure Migrate: Migration and modernization**, select the **Overview** button.
 
     ![Screenshot of the 'Azure Migrate - Servers' blade with the 'Overview' button in the 'Azure Migrate: Server Migration' panel highlighted.](images/Exercise3/replicate-7.png "Overview link")
 
@@ -293,7 +293,7 @@ In this task you enabled replication from the Hyper-V host to Azure Migrate, and
 
 In this task you will modify the settings for each replicated VM to use a static private IP address that matches the on-premises IP addresses for that machine.
 
-1. Still using the **Azure Migrate: Server Migration - Replicating machines** blade, select the **smarthotelweb1** virtual machine. This opens a detailed migration and replication blade for this machine. Take a moment to study this information.
+1. Still using the **Azure Migrate: Migration and modernization - Replicating machines** blade, select the **smarthotelweb1** virtual machine. This opens a detailed migration and replication blade for this machine. Take a moment to study this information.
 
     ![Screenshot from the 'Azure Migrate: Server Migration - Replicating machines' blade with the smarthotelweb1 machine highlighted.](images/Exercise3/config-0a.png "Replicating machines")
 
@@ -323,13 +323,13 @@ In this task you modified the settings for each replicated VM to use a static pr
 
 > **Note**: Azure Migrate makes a "best guess" at the VM settings, but you have full control over the settings of migrated items. In this case, setting a static private IP address ensures the virtual machines in Azure retain the same IPs they had on-premises, which avoids having to reconfigure the VMs during migration (for example, by editing web.config files).
 
-## Task 6: Server migration
+## Task 6: Migration and modernization
 
 In this task you will perform a migration of the UbuntuWAF, smarthotelweb1, and smarthotelweb2 machines to Azure.
 
 > **Note**: In a real-world scenario, you would perform a test migration before the final migration. To save time, you will skip the test migration in this lab. The test migration process is very similar to the final migration.
 
-1. Return to the **Azure Migrate: Server Migration** overview blade. Under **Step 3: Migrate**, select **Migrate**.
+1. Return to the **Azure Migrate: Migration and modernization** overview blade. Under **Step 3: Migrate**, select **Migrate**.
 
     ![(Update) Screenshot of the 'Azure Migrate: Server Migration' overview blade, with the 'Migrate' button highlighted.](images/Exercise3/migrate-1.png "Replication summary")
 
@@ -386,4 +386,4 @@ In this task, you assigned a public IP address to the Application gateway and ve
 
 ### Exercise summary
 
-In this exercise you migrated the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Server Migration. Having migrated the virtual machines, you configured the application gateway and verified that the migrated application is working end-to-end.
+In this exercise you migrated the web tier and application tiers of the application from on-premises to Azure using Azure Migrate: Migration and modernization. Having migrated the virtual machines, you configured the application gateway and verified that the migrated application is working end-to-end.

@@ -42,13 +42,13 @@ In this task, you will and select the assessment and migration tools, the Azure 
 
     ![](images/Exercise1/project-select.png)
 
-1. You should see the **Azure Migrate: Discovery and assessment** and **Azure Migrate: Server Migration** panels for the current migration project, as shown below.
+1. You should see the **Azure Migrate: Discovery and assessment** and **Azure Migrate: Migration and modernization** panels for the current migration project, as shown below.
 
     ![](images/Exercise1/SP-Ex1t1s7.png)
 
 ### Task 1 summary 
 
-In this task you created an Azure Migrate project, using the default built-in tools for server assessment and server migration.
+In this task you have explored an Azure Migrate project, using the default built-in tools for Migration and modernizatio.
 
 ## Task 2: Deploy the Azure Migrate appliance
 
@@ -275,17 +275,17 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
     ![Screenshot showing the SmartHotel VMs group. Each VM has dependency status 'Requires agent installation'.](images/Exercise1/requires-agent-installation-v2.png "SmartHotel VMs server group")
 
-4. On the **Dependencies** blade, select **Configure OMS workspace**.
+4. On the **Dependencies** blade, select **Configure log Analytics workspace**.
 
     ![Screenshot of the Azure Migrate 'Dependencies' blade, with the 'Configure OMS Workspace' button highlighted.](images/Exercise1/configure-oms-link.png "Configure OMS Workspace link")
 
-5. On the **Configure OMS workspace** blade, provide the below information and select **Configure**.
+5. On the **Configure log Analytics workspace** blade, provide the below information and select **Configure**.
 
-    - OMS workspace: Enter **AzureMigrateWS<inject key="DeploymentID" enableCopy="false" />**
-    - OMS workspace location: Select **East US** from the dropdown.
+    - Log workspace: Enter **AzureMigrateWS<inject key="DeploymentID" enableCopy="false" />**
+    - Log workspace location: Select **East US** from the dropdown.
 
 
-   ![Screenshot of the Azure Migrate 'Configure OMS workspace' blade.](images/Exercise1/configure-oms.png "OMS Workspace settings")
+   ![Screenshot of the Azure Migrate 'Configure log workspace' blade.](images/Exercise1/configure-oms.png "Log Workspace settings")
 
 6. Wait for the workspace to be deployed. Once it is deployed, navigate to **AzureMigrateWS<inject key="DeploymentID" enableCopy="false" />** by clicking on it.
 
